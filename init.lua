@@ -95,7 +95,7 @@ require("plugins.treesitter")
 -- LSP
 --
 vim.pack.add({
-    -- Status updates of the progress bar in te rigt corder
+    -- Show LSP progress in the bottom right corner
     gh("j-hui/fidget.nvim"),
 
     gh("neovim/nvim-lspconfig"),
@@ -155,6 +155,7 @@ require("toggleterm").setup({
     size = nil,
     direction = "float",
     open_mapping = [[<leader>t]],
+    insert_mappings = false,
     float_opts = {
         border = "curved",
         width = 65,
