@@ -1,6 +1,14 @@
 require("snacks").setup({
     notifier = { enabled = true },
     explorer = { enabled = true },
+    scratch = {
+        enabled = true,
+        ft = "markdown",
+        win = {
+            width = 0.8,
+            height = 0.8,
+        },
+    },
     picker = {
         enabled = true,
         sources = {
@@ -70,7 +78,7 @@ require("snacks").setup({
 })
 
 --
--- Search
+-- Main
 --
 vim.keymap.set("n", "<leader><space>", function()
     Snacks.picker.smart()
@@ -80,13 +88,44 @@ vim.keymap.set("n", "<leader>/", function()
     Snacks.picker.grep()
 end, { desc = "Search" })
 
-vim.keymap.set("n", "<leader>sh", function()
-    Snacks.picker.help()
-end, { desc = "Help" })
-
 vim.keymap.set("n", "/", function()
     Snacks.picker.lines()
-end, { desc = "Search current file" })
+end, { desc = "Search Current File" })
+
+vim.keymap.set("n", "<leader>:", function()
+    Snacks.picker.command_history()
+end, { desc = "Command History" })
+
+vim.keymap.set("n", "<leader>.", function()
+    Snacks.scratch.open()
+end, { desc = "Notes" })
+
+--
+-- Other Search
+--
+vim.keymap.set("n", "<leader>sh", function()
+    Snacks.picker.help()
+end, { desc = "Search Help" })
+
+vim.keymap.set("n", "<leader>sd", function()
+    Snacks.picker.diagnostics()
+end, { desc = "Search Diagnostics" })
+
+vim.keymap.set("n", "<leader>sp", function()
+    Snacks.picker.projects()
+end, { desc = "Search Projects" })
+
+vim.keymap.set("n", "<leader>sr", function()
+    Snacks.picker.recent()
+end, { desc = "Search Recent" })
+
+vim.keymap.set("n", "<leader>si", function()
+    Snacks.picker.icons()
+end, { desc = "Search Icons" })
+
+vim.keymap.set("n", "<leader>s.", function()
+    Snacks.picker.scratch()
+end, { desc = "Search Notes" })
 
 --
 -- File Explorer
