@@ -24,24 +24,14 @@ vim.list_extend(ensure_installed, {})
 
 require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
--- vim.lsp.config("diagnostics", {
---     underline = false,
---     virtual_text = {
---         spacing = 4,
---         source = "if_many",
---         prefix = "●",
---         -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
---         -- prefix = "icons",
---     },
---     signs = {
---         text = {
---             [vim.diagnostic.severity.ERROR] = "x",
---             [vim.diagnostic.severity.WARN] = "x",
---             [vim.diagnostic.severity.HINT] = "x",
---             [vim.diagnostic.severity.INFO] = "x",
---         },
---     },
--- })
+vim.diagnostic.config({
+    underline = false,
+    virtual_text = {
+        spacing = 4,
+        source = "if_many",
+        prefix = "●",
+    },
+})
 
 for name, server in pairs(servers) do
     vim.lsp.config(name, server)
