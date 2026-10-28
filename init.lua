@@ -152,9 +152,12 @@ require("gitsigns").setup({
 --
 vim.pack.add({ gh("akinsho/toggleterm.nvim") })
 require("toggleterm").setup({
+    size = nil,
     direction = "float",
     open_mapping = [[<leader>t]],
     float_opts = {
         border = "curved",
+        width = 65,
+        height = 15,
     },
 })
