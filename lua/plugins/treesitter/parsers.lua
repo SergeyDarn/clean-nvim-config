@@ -1,0 +1,24 @@
+return {
+    "bash",
+    "c",
+    "diff",
+    "lua",
+    "luadoc",
+    "markdown",
+    "markdown_inline",
+    "query",
+    "vim",
+    "vimdoc",
+
+    "html",
+    "javascript",
+    "typescript",
+    "css",
+    "scss",
+    "vue",
+
+    "go",
+    "gomod",
+    "gowork",
+    "gosum",
+}
