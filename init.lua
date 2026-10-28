@@ -146,3 +146,15 @@ require("gitsigns").setup({
         },
     },
 })
+
+--
+-- Floating terminal (better UI/UX than the one in Snacks)
+--
+vim.pack.add({ gh("akinsho/toggleterm.nvim") })
+require("toggleterm").setup({
+    direction = "float",
+    open_mapping = [[<leader>t]],
+    float_opts = {
+        border = "curved",
+    },
+})
