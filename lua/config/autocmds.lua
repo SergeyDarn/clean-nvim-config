@@ -1,7 +1,7 @@
 --
 -- Set correct current working directory when opening a project
 --
-local set_root = require("config.helpers.set_root")
+local set_root = require("config.utils.set_root")
 
 vim.api.nvim_create_autocmd("VimEnter", {
     pattern = "*",

@@ -1,4 +1,4 @@
-local set_root = require("config.helpers.set_root")
+local set_root = require("config.utils.set_root")
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
