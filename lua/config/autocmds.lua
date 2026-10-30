@@ -1,5 +1,5 @@
 --
--- Set correct current working directory when opening a project
+-- Set correct current working directory when opening vim
 --
 vim.api.nvim_create_autocmd("VimEnter", {
     pattern = "*",
