@@ -27,7 +27,7 @@ end, { desc = "Notes" })
 -- Notifications
 --
 vim.keymap.set("n", "<leader>n", function()
-    Snacks.notifier.show_history()
+    Snacks.picker.notifications()
 end, { desc = "Notification History" })
 
 --
