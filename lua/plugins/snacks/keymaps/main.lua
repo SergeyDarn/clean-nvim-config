@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader><space>", function()
 end, { desc = "Find Files" })
 
 vim.keymap.set("n", "<leader>/", function()
-    Snacks.picker.grep()
+    Snacks.picker.grep({ regex = false })
 end, { desc = "Search" })
 
 vim.keymap.set("n", "/", function()
