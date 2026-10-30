@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
         local args = vim.fn.argv()
         for _, arg in ipairs(type(args) == "table" and args or {}) do
             if vim.fn.isdirectory(arg) == 1 then
-                vim.cmd.cd(arg)
+                vim.cmd.chdir(arg)
                 break
             end
         end
