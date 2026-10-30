@@ -18,7 +18,7 @@
 
 local root_cache = {}
 
-find_root = function()
+local find_root = function()
     local current_buf = vim.api.nvim_get_current_buf() or 0
     root_markers = { ".git", "go.mod", "config.toml", "package.json", "Makefile" }
 
