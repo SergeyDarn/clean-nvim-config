@@ -43,5 +43,14 @@ require("blink.cmp").setup({
     fuzzy = { implementation = "prefer_rust_with_warning" },
 
     -- Shows a signature help window while you type arguments for a function
-    signature = { enabled = true },
+    signature = {
+        enabled = true,
+        trigger = {
+            enabled = true,
+            show_on_accept = true,
+        },
+        window = {
+            show_documentation = false,
+        },
+    },
 })
