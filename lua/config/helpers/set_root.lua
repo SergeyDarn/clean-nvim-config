@@ -63,7 +63,7 @@ end
 --
 local set_root = function()
     local cwd = vim.fn.getcwd()
-    local root = find_root(current_buf)
+    local root = find_root()
 
     if root == nil or root == cwd then
         return
