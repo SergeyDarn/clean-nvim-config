@@ -3,6 +3,7 @@ require("conform").setup({
     format_on_save = function(bufnr)
         local enabled_filetypes = {
             lua = true,
+            go = true,
         }
         if enabled_filetypes[vim.bo[bufnr].filetype] then
             return { timeout_ms = 500 }
@@ -16,6 +17,7 @@ require("conform").setup({
     -- You can also specify external formatters in here.
     formatters_by_ft = {
         lua = { "stylua" },
+        go = { "goimports", "gofumpt" },
         -- rust = { 'rustfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },

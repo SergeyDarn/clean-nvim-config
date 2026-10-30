@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>a", function()
     end
 
     grapple.toggle()
-    notifier.notify(message, messageType)
+    notifier.notify(message, messageType, { icon = "" })
 end, { desc = "Toggle Mark" })
 
 vim.keymap.set("n", "<leader>h", "<cmd>Grapple toggle_tags<cr>", { desc = "Grapple" })

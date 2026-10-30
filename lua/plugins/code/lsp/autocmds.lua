@@ -13,15 +13,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("<leader>cr", vim.lsp.buf.rename, "Rename")
 
         --
+        -- Show Docs for variable under cursor
+        --
+        map("<leader>cd", vim.lsp.buf.hover, "Docs")
+        map("gi", vim.lsp.buf.hover, "Docs")
+
+        --
         -- Show diagnostic (warnings / errors) for the current line
         --
-        map("<leader>cd", vim.diagnostic.open_float, "Line diagnostic")
-
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if client and client:supports_method("textDocument/inlayHint", event.buf) then
-            map("<leader>ch", function()
-                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-            end, "Toggle inlay hints")
-        end
+        map("<leader>ce", vim.diagnostic.open_float, "Line Error")
     end,
 })

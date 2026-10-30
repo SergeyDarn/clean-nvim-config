@@ -10,5 +10,18 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 -- Quit all
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
--- Plugins
-vim.keymap.set("n", "<leader>vu", "<cmd>lua vim.pack.update()<CR>", { desc = "vim.pack.update()" })
+-- Plugins and Vim
+vim.keymap.set("n", "<leader>vr", "<cmd>restart<CR>", { desc = "Restart Neovim" })
+vim.keymap.set("n", "<leader>vu", vim.pack.update, { desc = "Update VimPack Plugins" })
+
+vim.api.nvim_create_user_command("VimPackAdd", function(opts)
+    vim.pack.add(opts.fargs)
+end, { nargs = "+", desc = "Add VimPack Plugin" })
+
+vim.api.nvim_create_user_command("VimPackDel", function(opts)
+    vim.pack.del(opts.fargs)
+end, { nargs = "+", desc = "Delete VimPack Plugin" })
+
+vim.api.nvim_create_user_command("VimPackUpdate", function()
+    vim.pack.update()
+end, { desc = "Update VimPack Plugins" })

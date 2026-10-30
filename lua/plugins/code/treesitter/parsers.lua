@@ -9,6 +9,7 @@ return {
     "query",
     "vim",
     "vimdoc",
+    "json",
 
     "html",
     "javascript",

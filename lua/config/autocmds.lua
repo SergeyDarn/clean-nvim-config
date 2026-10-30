@@ -1,4 +1,6 @@
+--
 -- Set correct pwd when opening a directory (needed for Grapple)
+--
 vim.api.nvim_create_autocmd("VimEnter", {
     pattern = "*",
     callback = function()
@@ -12,8 +14,10 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end,
 })
 
+--
 -- After plugin install or update
 -- Run appropriate build commannd for that plugin if necessary
+--
 vim.api.nvim_create_autocmd("PackChanged", {
     callback = function(ev)
         local name = ev.data.spec.name
@@ -32,17 +36,10 @@ vim.api.nvim_create_autocmd("PackChanged", {
     end,
 })
 
+--
 -- Save cursor position in a file after closing it
+--
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
     pattern = "*",
     command = 'silent! normal! g`"zv',
-})
-
--- Highlight when yanking (copying) text
-vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking (copying) text",
-    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-    callback = function()
-        vim.hl.on_yank()
-    end,
 })

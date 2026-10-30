@@ -8,157 +8,172 @@ local function gh(repo)
 end
 
 --
--- Load configs
+-- General configs
 --
-require("config.options")
-require("config.autocmds")
-require("config.keymaps")
-
---
--- Icons
---
-vim.pack.add({ gh("nvim-mini/mini.icons") })
-require("mini.icons").setup({})
--- Used for backwards compatibility with plugins that require `nvim-web-devicons` (e.g. telescope.nvim)
-MiniIcons.mock_nvim_web_devicons()
-
---
--- Add/delete/replace surroundings (brackets, quotes, etc.)
---
-vim.pack.add({ gh("nvim-mini/mini.surround") })
-require("mini.surround").setup({})
-
---
--- Theme
---
-vim.pack.add({ { src = gh("catppuccin/nvim"), name = "catppuccin" } })
-
-require("catppuccin").setup({
-    flavour = "mocha",
-})
-vim.cmd.colorscheme("catppuccin-nvim")
-
---
--- Status line at the bottom
---
-vim.pack.add({ gh("nvim-lualine/lualine.nvim") })
-require("lualine").setup({
-    sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch", "searchcount" },
-        lualine_c = { "location", "diagnostics" },
-        lualine_x = { "diff" },
-        lualine_y = { "filetype" },
-        lualine_z = { "filename" },
-    },
-})
-
---
--- Change UI for cmdline+search
--- (also should affect notifications and popupmenu in theory, but I don't think it does)
---
-vim.pack.add({
-    gh("MunifTanjim/nui.nvim"),
-    gh("folke/noice.nvim"),
-})
-require("noice").setup({
-    presets = {
-        command_palette = true,
-    },
-})
+require("config")
 
 --
 -- Snacks
+-- (Init snacks first because some other plugins might be dependant on them)
 --
 vim.pack.add({ gh("folke/snacks.nvim") })
 require("plugins.snacks")
 
 --
--- Grapple
---
-vim.pack.add({ gh("cbochs/grapple.nvim") })
-require("plugins.grapple")
-
---
--- Automatic indentation style detection for the file
---
-vim.pack.add({ gh("NMAC427/guess-indent.nvim") })
-require("guess-indent").setup({})
-
---
--- Treesitter (code syntax highlight)
---
-vim.pack.add({ { src = gh("nvim-treesitter/nvim-treesitter"), version = "main" } })
-require("plugins.treesitter")
-
---
--- LSP
+-- Utils
 --
 vim.pack.add({
-    -- Show LSP progress in the bottom right corner
+    --
+    -- Icons
+    --
+    gh("nvim-mini/mini.icons"),
+
+    --
+    -- Add/delete/replace surroundings (brackets, quotes, etc.)
+    --
+    gh("nvim-mini/mini.surround"),
+    -- "q" for quote, "b" for block, "t" for tag
+    gh("nvim-mini/mini.ai"),
+
+    --
+    -- Automatic indentation style detection for the file
+    --
+    gh("NMAC427/guess-indent.nvim"),
+
+    --
+    -- Change relative line numbers to only include 1-5 numbers, for vim motions comfort
+    --
+    gh("mluders/comfy-line-numbers.nvim"),
+
+    --
+    -- Show git diff in files inline (+ lots of other features I don't use)
+    --
+    gh("lewis6991/gitsigns.nvim"),
+
+    --
+    -- Clipboard history + better yank
+    -- (Sqlite for more reliable history storage)
+    --
+    gh("kkharji/sqlite.lua"),
+    gh("gbprod/yanky.nvim"),
+
+    --
+    -- Mini-games to become better at Vim Motions
+    --
+    gh("szymonwilczek/vim-be-better"),
+})
+require("plugins.utils")
+
+---
+--- UI
+---
+vim.pack.add({
+    --
+    -- Theme
+    --
+    { src = gh("catppuccin/nvim"), name = "catppuccin" },
+
+    --
+    -- Status line at the bottom
+    --
+    gh("nvim-lualine/lualine.nvim"),
+
+    --
+    -- Floating terminal (better UI/UX than the one in Snacks)
+    --
+    gh("akinsho/toggleterm.nvim"),
+
+    --
+    -- Popup that shows keymaps as you type
+    --
+    gh("folke/which-key.nvim"),
+
+    --
+    -- Change UI for cmdline + search + (?) notifications
+    -- + some UNWANTED LSP changes too
+    --
+    gh("MunifTanjim/nui.nvim"),
+    gh("folke/noice.nvim"),
+
+    --
+    -- Nice todos (inline highlighting + Snacks search)
+    --
+    gh("nvim-lua/plenary.nvim"),
+    gh("folke/todo-comments.nvim"),
+})
+require("plugins.ui")
+
+--
+-- Code
+--
+vim.pack.add({
+    --
+    -- Code syntax highlight
+    --
+    { src = gh("nvim-treesitter/nvim-treesitter"), version = "main" },
+
+    --
+    -- Show LSP loading progress in the bottom right corner
+    --
     gh("j-hui/fidget.nvim"),
 
+    --
+    -- Language Server Protocol configuration
+    --
     gh("neovim/nvim-lspconfig"),
 
-    -- Automatic lsp servers installation
+    --
+    -- Automatic LSP servers installation
+    --
     gh("mason-org/mason.nvim"),
     gh("mason-org/mason-lspconfig.nvim"),
     gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
+
+    --
+    -- Navigation between files
+    --
+    gh("cbochs/grapple.nvim"),
+
+    --
+    -- Code autocomplete
+    --
+    {
+        src = gh("saghen/blink.cmp"),
+        version = vim.version.range("1.*"),
+    },
+
+    --
+    -- Code formatting
+    --
+    gh("stevearc/conform.nvim"),
+
+    --
+    -- Auto pairs
+    --
+    -- TODO: check default config
+    -- and see if there might be better options for me
+    gh("windwp/nvim-autopairs"),
+
+    --
+    -- Auto pairs for html tags
+    --
+    gh("windwp/nvim-ts-autotag"),
 })
-require("plugins.lsp")
+require("plugins.code")
 
 --
--- Code formatting
+-- TODO: install important plugins
 --
-vim.pack.add({ gh("stevearc/conform.nvim") })
-require("plugins.conform")
+-- grug-far - Global search & replace
+-- marks.nvim (figure out if I need it)
+-- nvim-treesitter-textobjects (figure out if I need it)
 
 --
--- Show pending keybinds
+-- NOTE: try plugins
 --
-vim.pack.add({ gh("folke/which-key.nvim") })
-require("which-key").setup({
-    delay = 300,
-    icons = { mappings = true },
-    -- Document existing key chains
-    spec = {
-        { "<leader>c", group = "Code", mode = { "n", "v" } },
-        { "<leader>g", group = "Git", mode = { "n", "v" } },
-        { "<leader>s", group = "Search", mode = { "n", "v" } },
-        { "<leader>v", group = "Vim", mode = { "n", "v" } },
-        { "<leader>q", group = "Exit", mode = { "n", "v" } },
-    },
-})
-
---
--- Show git diff in files inline (+ lots of other features I don't use)
---
-vim.pack.add({ gh("lewis6991/gitsigns.nvim") })
-require("gitsigns").setup({
-    signs = {
-        delete = {
-            text = "x",
-        },
-    },
-    signs_staged = {
-        delete = {
-            text = "x",
-        },
-    },
-})
-
---
--- Floating terminal (better UI/UX than the one in Snacks)
---
-vim.pack.add({ gh("akinsho/toggleterm.nvim") })
-require("toggleterm").setup({
-    size = nil,
-    direction = "float",
-    open_mapping = [[<leader>t]],
-    insert_mappings = false,
-    float_opts = {
-        border = "curved",
-        width = 65,
-        height = 15,
-    },
-})
+-- blink-cmp-yanky
+-- lua snippets (config from kickstart.nvim)
+-- vim-dadbod for working with databases
+-- tabout
+-- yazi in nvim
+-- nvim-chainsaw for logging:

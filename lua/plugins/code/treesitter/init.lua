@@ -1,4 +1,4 @@
-local parsers = require("plugins.treesitter.parsers")
+local parsers = require("plugins.code.treesitter.parsers")
 require("nvim-treesitter").install(parsers)
 
 local function treesitter_try_attach(buf, language)
