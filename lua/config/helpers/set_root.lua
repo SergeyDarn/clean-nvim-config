@@ -27,7 +27,7 @@ local root_cache = {}
 ---
 find_root = function(buf_id)
     buf_id = buf_id or 0
-    root_markers = { ".git", "config.toml", "package.json", "Makefile" }
+    root_markers = { ".git", "go.mod", "config.toml", "package.json", "Makefile" }
 
     -- Compute directory to start search from. NOTEs on why not using file path:
     -- - This has better performance because `vim.fs.find()` is called less.
