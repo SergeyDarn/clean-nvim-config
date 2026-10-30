@@ -1,8 +1,6 @@
 --
 -- Set correct current working directory when opening a project
 --
-local set_root = require("config.utils.set_root")
-
 vim.api.nvim_create_autocmd("VimEnter", {
     pattern = "*",
     callback = function()
@@ -20,6 +18,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- Set correct current working directory when jumping between projects
 -- (works by watching cursor jump list)
 --
+local set_root = require("config.utils.set_root")
 local jump_group = vim.api.nvim_create_augroup("JumpAutocmd", { clear = true })
 local last_jump_idx = -1
 
