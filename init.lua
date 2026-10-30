@@ -158,13 +158,17 @@ vim.pack.add({
     -- Auto pairs for html tags
     --
     gh("windwp/nvim-ts-autotag"),
+
+    --
+    -- Search and replace in multiple files
+    --
+    gh("MagicDuck/grug-far.nvim"),
 })
 require("plugins.code")
 
 --
 -- TODO: install important plugins
 --
--- grug-far - Global search & replace
 -- marks.nvim (figure out if I need it)
 -- nvim-treesitter-textobjects (figure out if I need it)
 
@@ -177,3 +181,7 @@ require("plugins.code")
 -- tabout
 -- yazi in nvim
 -- nvim-chainsaw for logging:
+-- twilight (snacks dim) for focus on the code block I'm typing in
+-- Find plugin for file local history (like in phpstorm)
+-- flash.nvim for quick search and jump
+--

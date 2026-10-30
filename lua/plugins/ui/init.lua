@@ -4,6 +4,11 @@ require("catppuccin").setup({
 vim.cmd.colorscheme("catppuccin-nvim")
 
 require("lualine").setup({
+    options = {
+        disabled_filetypes = {
+            statusline = { "grug-far" },
+        },
+    },
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch", "searchcount" },
