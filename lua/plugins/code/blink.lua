@@ -51,6 +51,7 @@ require("blink.cmp").setup({
         },
         window = {
             show_documentation = false,
+            max_width = 60,
         },
     },
 })
