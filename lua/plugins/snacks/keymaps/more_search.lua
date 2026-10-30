@@ -28,3 +28,20 @@ end, { desc = "Notes" })
 vim.keymap.set("n", "<leader>st", function()
     Snacks.picker.todo_comments()
 end, { desc = "Todos" })
+
+vim.keymap.set("n", "<leader>z", function()
+    Snacks.picker.zoxide()
+end, { desc = "Zoxide" })
+
+vim.keymap.set("n", "<leader>sl", function()
+    local chainsawMarker = require("chainsaw.config.config").config.marker
+
+    Snacks.picker.grep_word({
+        title = chainsawMarker .. " log statements",
+        cmd = "rg",
+        args = { "--trim" },
+        search = chainsawMarker,
+        regex = false,
+        live = false,
+    })
+end, { desc = "Logs" })
