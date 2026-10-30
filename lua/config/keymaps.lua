@@ -1,3 +1,5 @@
+local set_root = require("config.helpers.set_root")
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
@@ -11,7 +13,8 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- Plugins and Vim
-vim.keymap.set("n", "<leader>vr", "<cmd>restart<CR>", { desc = "Restart Neovim" })
+vim.keymap.set("n", "<leader>vp", set_root, { desc = "Set Project Root" })
+vim.keymap.set("n", "<leader>vr", "<cmd>write | restart<CR>", { desc = "Restart Neovim" })
 vim.keymap.set("n", "<leader>vu", vim.pack.update, { desc = "Update VimPack Plugins" })
 
 vim.api.nvim_create_user_command("VimPackAdd", function(opts)
