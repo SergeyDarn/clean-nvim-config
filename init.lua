@@ -13,6 +13,19 @@ end
 require("config")
 
 --
+-- Global plugins
+--
+vim.pack.add({
+    --
+    -- Convenient logging
+    -- (it's here and not in the code section
+    -- because it works for debugging neovim config)
+    --
+    gh("chrisgrieser/nvim-chainsaw"),
+})
+require("plugins.chainsaw")
+
+--
 -- Snacks
 -- (Init snacks first because some other plugins might be dependant on them)
 --
@@ -178,9 +191,8 @@ require("plugins.code")
 -- blink-cmp-yanky
 -- lua snippets (config from kickstart.nvim)
 -- vim-dadbod for working with databases
+-- nvim-dap-go for debugging
 -- tabout
--- yazi in nvim
--- nvim-chainsaw for logging:
 -- twilight (snacks dim) for focus on the code block I'm typing in
 -- Find plugin for file local history (like in phpstorm)
 -- flash.nvim for quick search and jump

@@ -77,6 +77,10 @@
       "rev": "3172f40c16563db871a58f20d205c710ad782311",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
+    "nvim-chainsaw": {
+      "rev": "c38210b379d5a61b3e1bf918cf787212fa1eedd9",
+      "src": "https://github.com/chrisgrieser/nvim-chainsaw"
+    },
     "nvim-lspconfig": {
       "rev": "4b2b045b8ceb035f5c8bc9cab19b95706bfa6a19",
       "src": "https://github.com/neovim/nvim-lspconfig"
