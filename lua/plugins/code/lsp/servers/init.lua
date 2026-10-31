@@ -2,13 +2,8 @@
 -- See `:help lsp-config` for information about keys and how to configure
 ---@type table<string, vim.lsp.Config>
 return {
-    -- Used to format Lua code
-    stylua = {},
-
     lua_ls = require("plugins.code.lsp.servers.lua_ls"),
     gopls = require("plugins.code.lsp.servers.gopls"),
-    goimports = {},
-    gofumpt = {},
 
     -- TODO:
     -- add svelte too
@@ -31,4 +26,12 @@ return {
         },
     },
     vue_ls = {},
+
+    -- Style formatters
+    stylua = {},
+    goimports = {},
+    gofumpt = {},
+    prettier = {},
+    prettierd = {},
+    taplo = {},
 }
