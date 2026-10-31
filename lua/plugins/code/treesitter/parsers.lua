@@ -10,6 +10,7 @@ return {
     "vim",
     "vimdoc",
     "json",
+    "yaml",
 
     "html",
     "javascript",

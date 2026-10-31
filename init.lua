@@ -185,6 +185,30 @@ vim.pack.add({
 require("plugins.code")
 
 --
+-- Other plugins
+--
+vim.pack.add({
+    --
+    -- Markdown rendering
+    --
+    gh("OXY2DEV/markview.nvim"),
+
+    --
+    -- Neovim tips
+    --
+    gh("saxon1964/neovim-tips"),
+})
+
+require("markview").setup({})
+
+require("neovim_tips").setup({
+    bookmark_symbol = "🔖",
+})
+vim.keymap.set("n", "<leader>?t", "<cmd>NeovimTips<cr>", { desc = "Tips" })
+vim.keymap.set("n", "<leader>?r", "<cmd>NeovimTipsRandom<cr>", { desc = "Random Tip" })
+vim.keymap.set("n", "<leader>?b", "<cmd>NeovimTipsBookmarks<cr>", { desc = "Bookmarked Tips" })
+
+--
 -- TODO: install important plugins
 --
 -- marks.nvim (figure out if I need it)
