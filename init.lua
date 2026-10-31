@@ -150,7 +150,7 @@ vim.pack.add({
     --
     -- Navigation between files
     --
-    gh("cbochs/grapple.nvim"),
+    gh("dzfrias/arena.nvim"),
 
     --
     -- Code autocomplete
