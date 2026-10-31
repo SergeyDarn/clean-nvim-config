@@ -8,14 +8,15 @@ require("lualine").setup({
         disabled_filetypes = {
             statusline = { "grug-far" },
         },
+        component_separators = { left = "", right = "" },
     },
     sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch", "searchcount" },
-        lualine_c = { "location", "diagnostics" },
-        lualine_x = { "diff" },
+        lualine_a = { "branch" },
+        lualine_b = { "searchcount" },
+        lualine_c = { "filename", "diagnostics", "diff" },
+        lualine_x = { "location" },
         lualine_y = { "filetype" },
-        lualine_z = { "filename" },
+        lualine_z = { "" },
     },
 })
 
