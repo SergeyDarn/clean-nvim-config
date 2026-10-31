@@ -13,10 +13,6 @@ vim.keymap.set("n", "<leader>sp", function()
     Snacks.picker.projects()
 end, { desc = "Projects" })
 
-vim.keymap.set("n", "<leader>sf", function()
-    Snacks.picker.recent()
-end, { desc = "Recent" })
-
 vim.keymap.set("n", "<leader>si", function()
     Snacks.picker.icons()
 end, { desc = "Icons" })
