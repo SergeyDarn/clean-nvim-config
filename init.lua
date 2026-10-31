@@ -148,11 +148,6 @@ vim.pack.add({
     gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
 
     --
-    -- Navigation between files
-    --
-    gh("dzfrias/arena.nvim"),
-
-    --
     -- Code autocomplete
     --
     {
@@ -189,6 +184,12 @@ require("plugins.code")
 --
 vim.pack.add({
     --
+    -- Navigation between files
+    --
+    gh("dzfrias/arena.nvim"),
+    gh("folke/flash.nvim"),
+
+    --
     -- Markdown rendering
     --
     gh("OXY2DEV/markview.nvim"),
@@ -198,6 +199,9 @@ vim.pack.add({
     --
     gh("saxon1964/neovim-tips"),
 })
+
+require("plugins.arena")
+require("plugins.flash")
 
 require("markview").setup({})
 
