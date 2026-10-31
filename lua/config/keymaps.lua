@@ -10,6 +10,9 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 -- Quit all
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
+-- Add vertical split
+vim.keymap.set("n", "<leader>w", "<cmd>botright vsplit<cr>", { desc = "Vertical Split" })
+
 -- Plugins and Vim
 vim.keymap.set("n", "<leader>vr", "<cmd>write | restart<CR>", { desc = "Restart Neovim" })
 vim.keymap.set("n", "<leader>vu", vim.pack.update, { desc = "Update VimPack Plugins" })
