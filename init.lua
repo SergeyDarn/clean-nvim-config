@@ -79,6 +79,11 @@ vim.pack.add({
     -- Mini-games to become better at Vim Motions
     --
     gh("szymonwilczek/vim-be-better"),
+
+    --
+    -- Show colors inline
+    --
+    gh("brenoprata10/nvim-highlight-colors"),
 })
 require("plugins.utils")
 
@@ -235,5 +240,3 @@ vim.keymap.set("n", "<leader>?b", "<cmd>NeovimTipsBookmarks<cr>", { desc = "Book
 -- tabout
 -- twilight (snacks dim) for focus on the code block I'm typing in
 -- Find plugin for file local history (like in phpstorm)
--- flash.nvim for quick search and jump
---

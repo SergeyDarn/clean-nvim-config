@@ -27,3 +27,5 @@ require("gitsigns").setup({
 })
 
 require("plugins.utils.yanky")
+
+require("nvim-highlight-colors").setup({})
