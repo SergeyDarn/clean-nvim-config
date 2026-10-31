@@ -131,6 +131,14 @@ vim.pack.add({
     { src = gh("nvim-treesitter/nvim-treesitter"), version = "main" },
 
     --
+    -- Add vim operations for coding blocks (if, loop, function, class)
+    --
+    {
+        src = gh("nvim-treesitter/nvim-treesitter-textobjects"),
+        version = "main",
+    },
+
+    --
     -- Show LSP loading progress in the bottom right corner
     --
     gh("j-hui/fidget.nvim"),
@@ -216,7 +224,6 @@ vim.keymap.set("n", "<leader>?b", "<cmd>NeovimTipsBookmarks<cr>", { desc = "Book
 -- TODO: install important plugins
 --
 -- marks.nvim (figure out if I need it)
--- nvim-treesitter-textobjects (figure out if I need it)
 
 --
 -- NOTE: try plugins

@@ -1,6 +1,8 @@
 local parsers = require("plugins.code.treesitter.parsers")
 require("nvim-treesitter").install(parsers)
 
+require("plugins.code.treesitter.text_objects")
+
 local function treesitter_try_attach(buf, language)
     -- Check if the buffer is valid (might not be after install completes)
     if not vim.api.nvim_buf_is_valid(buf) then
