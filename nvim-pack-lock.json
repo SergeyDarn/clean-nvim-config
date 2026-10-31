@@ -98,6 +98,10 @@
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "rooter.nvim": {
+      "rev": "e052796c241d244446e670f1216e73d8ab3e121f",
+      "src": "https://github.com/wsdjeg/rooter.nvim"
+    },
     "snacks.nvim": {
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
       "src": "https://github.com/folke/snacks.nvim"

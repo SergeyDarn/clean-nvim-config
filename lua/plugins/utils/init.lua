@@ -7,6 +7,10 @@ require("mini.ai").setup({})
 
 require("guess-indent").setup({})
 
+require("rooter").setup({
+    root_patterns = { ".git/", "go.mod", "config.toml", "package.json", "Makefile" },
+})
+
 require("comfy-line-numbers").setup({})
 
 require("gitsigns").setup({

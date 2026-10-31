@@ -54,6 +54,11 @@ vim.pack.add({
     gh("NMAC427/guess-indent.nvim"),
 
     --
+    -- Set correct current working directory
+    -- when opening vim and when switching between projects
+    gh("wsdjeg/rooter.nvim"),
+
+    --
     -- Change relative line numbers to only include 1-5 numbers, for vim motions comfort
     --
     gh("mluders/comfy-line-numbers.nvim"),
