@@ -1,7 +1,6 @@
 require("noice").setup({
     presets = {
         command_palette = true,
-        lsp_doc_border = true,
     },
     -- Disable all LSP changes that I DON'T WANT
     -- THIS IS A UI PLUGIN WTF ARE YOU DOING DEV
