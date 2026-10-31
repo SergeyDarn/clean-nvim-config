@@ -15,19 +15,11 @@ require("snacks").setup({
         },
     },
     picker = {
-        -- TODO: delete if not used later
-        -- help = {
-        --     finder = "help",
-        --     format = "text",
-        --     previewers = {
-        --         file = { ft = "" },
-        --     },
-        --     win = { preview = { minimal = true } },
-        --     confirm = "help",
-        -- },
         sources = {
             explorer = {
                 auto_close = true,
+                hidden = true,
+                ignored = true,
                 layout = {
                     preset = "default",
                     layout = {
