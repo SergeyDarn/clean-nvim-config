@@ -3,8 +3,8 @@ return {
         layout = {
             box = "horizontal",
             backdrop = false,
-            width = 0.95,
-            height = 0.9,
+            width = 100,
+            height = 100,
             border = "none",
             {
                 box = "vertical",
@@ -40,7 +40,12 @@ return {
                 { win = "input", height = 1, border = "bottom" },
                 { win = "list", border = "none" },
             },
-            { win = "preview", title = "{preview}", border = "rounded", width = 0.7 },
+            {
+                win = "preview",
+                title = "{preview}",
+                border = "rounded",
+                width = 0.7,
+            },
         },
     },
     dropdown = {

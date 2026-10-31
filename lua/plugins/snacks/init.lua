@@ -1,3 +1,5 @@
+local layouts = require("plugins.snacks.layouts")
+
 require("snacks").setup({
     notifier = { enabled = true },
     explorer = { enabled = true },
@@ -34,7 +36,7 @@ require("snacks").setup({
                 return "telescope"
             end,
         },
-        layouts = require("plugins.snacks.layouts"),
+        layouts = layouts,
     },
 })
 
