@@ -52,7 +52,7 @@ return {
         layout = {
             backdrop = false,
             row = 1,
-            width = 0.45,
+            width = 0.6,
             min_width = 60,
             height = 0.9,
             border = "none",
@@ -60,7 +60,7 @@ return {
             {
                 win = "preview",
                 title = "{preview}",
-                height = 0.65,
+                height = 0.6,
                 border = true,
             },
             {
