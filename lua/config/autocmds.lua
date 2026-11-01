@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
 --
 -- Save cursor position in a file after closing it
 --
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+vim.api.nvim_create_autocmd("BufWinEnter", {
     pattern = "*",
     command = 'silent! normal! g`"zv',
 })
