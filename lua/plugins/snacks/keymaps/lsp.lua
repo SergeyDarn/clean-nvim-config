@@ -14,3 +14,7 @@ end, { desc = "LSP: Go to Definition" })
 vim.keymap.set("n", "gr", function()
     Snacks.picker.lsp_references()
 end, { desc = "LSP: References" })
+
+vim.keymap.set("n", "<leader>sc", function()
+    Snacks.picker.lsp_symbols()
+end, { desc = "LSP: Symbols" })
