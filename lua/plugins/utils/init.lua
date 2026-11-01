@@ -3,7 +3,13 @@ require("mini.icons").setup({})
 MiniIcons.mock_nvim_web_devicons()
 
 require("mini.surround").setup({})
-require("mini.ai").setup({})
+require("mini.ai").setup({
+    search_method = "cover",
+    custom_textobjects = {
+        -- Change bracket text object to not remove spaces
+        ["b"] = { { "%b()", "%b[]", "%b{}" }, "^.%s*().-()%s*.$" },
+    },
+})
 
 require("guess-indent").setup({})
 

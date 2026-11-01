@@ -45,14 +45,3 @@ end)
 vim.keymap.set({ "x", "o" }, "ic", function()
     select.select_textobject("@class.inner", "textobjects")
 end)
-
----
---- Block
----
-vim.keymap.set({ "x", "o" }, "ab", function()
-    select.select_textobject("@block.outer", "textobjects")
-end)
-
-vim.keymap.set({ "x", "o" }, "ib", function()
-    select.select_textobject("@block.inner", "textobjects")
-end)
