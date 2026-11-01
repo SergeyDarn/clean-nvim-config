@@ -38,6 +38,10 @@ vim.o.scrolloff = 10
 -- New horizontal splits go below
 vim.opt.splitbelow = true
 
+-- Decrease update time
+-- (Needed for faster treesitter variable under cursor usage highlights)
+vim.o.updatetime = 250
+
 -- Sync clipboard between OS and Neovim.
 -- Schedule the setting after `UiEnter` because it can increase startup-time.
 -- See `:help 'clipboard'`
