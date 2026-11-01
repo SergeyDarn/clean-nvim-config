@@ -20,6 +20,12 @@ vim.keymap.set("n", "<leader>gl", function()
     })
 end, { desc = "Git File History" })
 
+vim.keymap.set("n", "<leader>gh", function()
+    Snacks.picker.git_log({
+        layout = "telescope",
+    })
+end, { desc = "Git History" })
+
 vim.keymap.set("n", "<leader>gs", function()
     Snacks.picker.git_status({
         layout = "telescope",
