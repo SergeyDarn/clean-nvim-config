@@ -1,7 +1,3 @@
---
--- TODO: Setup go formatting
--- (Figure if I need all these settings)
---
 return {
     settings = {
         gopls = {
