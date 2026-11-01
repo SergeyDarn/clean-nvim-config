@@ -22,23 +22,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
         --
         -- Show Docs for code under cursor
         --
-        local showHover = function()
+        map("gi", function()
             vim.lsp.buf.hover(vim.tbl_extend("keep", {
                 max_width = 60,
             }, WINDOW_CONFIG))
-        end
-        map("<leader>cd", showHover, "Docs")
-        map("gi", showHover, "Docs")
+        end, "Code Docs")
 
         --
         -- Show diagnostic (warnings / errors) for the current line
         --
-        local showDiagnostic = function()
+        map("ge", function()
             vim.diagnostic.open_float(vim.tbl_extend("keep", {
                 max_width = 50,
             }, WINDOW_CONFIG))
+        end, "Line Error")
         end
-        map("<leader>ce", showDiagnostic, "Line Error")
-        map("ge", showDiagnostic, "Line Error")
     end,
 })
