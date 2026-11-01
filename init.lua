@@ -45,7 +45,7 @@ vim.pack.add({
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     --
     gh("nvim-mini/mini.surround"),
-    -- "q" for quote, "b" for block, "t" for tag
+    -- "q" for quote, "b" for brackets, "t" for tag
     gh("nvim-mini/mini.ai"),
 
     --
@@ -84,6 +84,11 @@ vim.pack.add({
     -- Show colors inline
     --
     gh("brenoprata10/nvim-highlight-colors"),
+
+    --
+    -- Conveniet plugin for tabing out of a quote or a bracket
+    --
+    gh("abecodes/tabout.nvim"),
 })
 require("plugins.utils")
 
