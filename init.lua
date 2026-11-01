@@ -198,15 +198,21 @@ vim.pack.add({
 require("plugins.code")
 
 --
+-- Navigation
+--
+vim.pack.add({
+    gh("dzfrias/arena.nvim"),
+    gh("folke/flash.nvim"),
+    gh("chentoast/marks.nvim"),
+    gh("cbochs/grapple.nvim"),
+})
+
+require("plugins.navigation")
+
+--
 -- Other plugins
 --
 vim.pack.add({
-    --
-    -- Navigation between files
-    --
-    gh("dzfrias/arena.nvim"),
-    gh("folke/flash.nvim"),
-
     --
     -- Markdown rendering
     --
@@ -218,9 +224,6 @@ vim.pack.add({
     gh("saxon1964/neovim-tips"),
 })
 
-require("plugins.arena")
-require("plugins.flash")
-
 require("markview").setup({})
 
 require("neovim_tips").setup({
@@ -229,11 +232,6 @@ require("neovim_tips").setup({
 vim.keymap.set("n", "<leader>?t", "<cmd>NeovimTips<cr>", { desc = "Tips" })
 vim.keymap.set("n", "<leader>?r", "<cmd>NeovimTipsRandom<cr>", { desc = "Random Tip" })
 vim.keymap.set("n", "<leader>?b", "<cmd>NeovimTipsBookmarks<cr>", { desc = "Bookmarked Tips" })
-
---
--- TODO: install important plugins
---
--- marks.nvim (figure out if I need it)
 
 --
 -- NOTE: try plugins

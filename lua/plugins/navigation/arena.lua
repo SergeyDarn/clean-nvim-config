@@ -24,6 +24,10 @@ arena.setup({
             exec(win, "botright vsplit ")
         end,
     },
+    algorithm = {
+        recency_factor = 1,
+        frequency_factor = 0.7,
+    },
 })
 
 vim.keymap.set("n", "<leader>a", function()
