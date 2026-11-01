@@ -9,13 +9,19 @@ end, { desc = "Lazygit" })
 -- Git
 --
 vim.keymap.set("n", "<leader>gb", function()
-    Snacks.picker.git_log_line()
+    Snacks.picker.git_log_line({
+        layout = "telescope",
+    })
 end, { desc = "Git Blame" })
 
 vim.keymap.set("n", "<leader>gl", function()
-    Snacks.picker.git_log_file()
+    Snacks.picker.git_log_file({
+        layout = "telescope",
+    })
 end, { desc = "Git File History" })
 
 vim.keymap.set("n", "<leader>gs", function()
-    Snacks.picker.git_status()
+    Snacks.picker.git_status({
+        layout = "telescope",
+    })
 end, { desc = "Git Status" })

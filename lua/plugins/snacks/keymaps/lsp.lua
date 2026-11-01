@@ -2,7 +2,9 @@
 -- LSP
 --
 vim.keymap.set("n", "<leader>cl", function()
-    Snacks.picker.lsp_config()
+    Snacks.picker.lsp_config({
+        layout = "telescope",
+    })
 end, { desc = "LSP: Info" })
 
 vim.keymap.set("n", "gd", function()

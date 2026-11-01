@@ -2,7 +2,9 @@
 -- More Search
 --
 vim.keymap.set("n", "<leader>sh", function()
-    Snacks.picker.help()
+    Snacks.picker.help({
+        layout = "telescope",
+    })
 end, { desc = "Help" })
 
 vim.keymap.set("n", "<leader>se", function()

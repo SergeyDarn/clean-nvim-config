@@ -11,7 +11,7 @@ end, { desc = "Search" })
 
 vim.keymap.set("n", "/", function()
     Snacks.picker.lines({
-        layout = "telescope",
+        layout = "dropdown",
     })
 end, { desc = "Search Current File" })
 

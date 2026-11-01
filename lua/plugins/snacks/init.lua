@@ -33,7 +33,7 @@ require("snacks").setup({
         },
         layout = {
             preset = function()
-                return "telescope"
+                return "dropdown"
             end,
         },
         layouts = layouts,
