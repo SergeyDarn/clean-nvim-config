@@ -229,6 +229,9 @@ vim.pack.add({
     gh("saxon1964/neovim-tips"),
 })
 
+--
+-- NOTE: later I can fix how code blocks look with the transparent theme
+--
 require("markview").setup({})
 
 require("neovim_tips").setup({
