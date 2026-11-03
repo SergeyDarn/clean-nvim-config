@@ -89,6 +89,11 @@ vim.pack.add({
     -- Conveniet plugin for tabing out of a quote or a bracket
     --
     gh("abecodes/tabout.nvim"),
+
+    --
+    -- Undo tree
+    --
+    gh("jiaoshijie/undotree"),
 })
 require("plugins.utils")
 

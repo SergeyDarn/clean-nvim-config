@@ -155,6 +155,10 @@
       "rev": "9a88eae817ef395952e08650b3283726786fb5fb",
       "src": "https://github.com/akinsho/toggleterm.nvim"
     },
+    "undotree": {
+      "rev": "ae312c61558ee41316e992d3bae3afea2a77f62c",
+      "src": "https://github.com/jiaoshijie/undotree"
+    },
     "vim-be-better": {
       "rev": "60e0214598d9d0bac8253e8b53a72eace4af92d3",
       "src": "https://github.com/szymonwilczek/vim-be-better"

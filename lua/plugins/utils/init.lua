@@ -37,3 +37,10 @@ require("plugins.utils.yanky")
 require("nvim-highlight-colors").setup({})
 
 require("tabout").setup({})
+
+local undotree = require("undotree")
+undotree.setup({})
+
+vim.keymap.set("n", "<leader>u", function()
+    undotree.toggle()
+end, { desc = "Toggle Undo Tree" })
