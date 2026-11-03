@@ -30,7 +30,7 @@ vim.o.undofile = true
 
 -- Minimal number of screen lines to keep above and below the cursor
 -- (amazingly improves experience of scrolling the file)
-vim.o.scrolloff = 10
+vim.o.scrolloff = 8
 
 -- New horizontal splits go below
 vim.opt.splitbelow = true
