@@ -22,14 +22,25 @@ catppuccin.setup({
         }
     end,
 })
-vim.cmd.colorscheme("catppuccin-nvim")
+
+--
+-- Calling 'compile' is needed even on opening vim
+-- for consistent theme behavior after switching them
+-- (catppuccin persists the changed settings even after restart for some reason)
+--
+local function setTheme(cursorLine)
+    catppuccin.compile()
+    vim.cmd.colorscheme("catppuccin-nvim")
+
+    vim.o.cursorline = cursorLine
+    vim.g.themeCursorLine = cursorLine
+end
+
+setTheme(not is_transparent_by_default)
 
 vim.keymap.set("n", "<leader>vt", function()
     catppuccin.options.transparent_background = not catppuccin.options.transparent_background
     catppuccin.options.float.transparent = not catppuccin.options.float.transparent
 
-    vim.o.cursorline = not vim.o.cursorline
-
-    catppuccin.compile()
-    vim.cmd.colorscheme(vim.g.colors_name)
+    setTheme(not vim.o.cursorline)
 end, { desc = "Toggle Transparency" })
