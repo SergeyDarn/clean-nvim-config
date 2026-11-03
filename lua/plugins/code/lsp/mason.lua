@@ -10,7 +10,6 @@ require("mason").setup({
 -- Disable cursorline inside mason for transparent theme
 -- (it's autocmd because mason doesn't provide an easier way to configure this)
 --
-
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "mason",
     callback = function()
