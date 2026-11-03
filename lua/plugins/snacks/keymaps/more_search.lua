@@ -12,7 +12,7 @@ vim.keymap.set("n", "<leader>se", function()
 end, { desc = "Code Errors" })
 
 vim.keymap.set("n", "<leader>sp", function()
-    Snacks.picker.projects()
+    Snacks.picker.projects({ layout = "select" })
 end, { desc = "Projects" })
 
 vim.keymap.set("n", "<leader>si", function()
@@ -28,7 +28,7 @@ vim.keymap.set("n", "<leader>st", function()
 end, { desc = "Todos" })
 
 vim.keymap.set("n", "<leader>z", function()
-    Snacks.picker.zoxide()
+    Snacks.picker.zoxide({ layout = "select" })
 end, { desc = "Zoxide" })
 
 vim.keymap.set("n", "<leader>sl", function()

@@ -73,4 +73,21 @@ return {
             },
         },
     },
+    select = {
+        hidden = { "preview" },
+        layout = {
+            backdrop = false,
+            width = 0.5,
+            max_width = 50,
+            height = 0.4,
+            min_height = 2,
+            box = "vertical",
+            border = true,
+            title = "{title}",
+            title_pos = "center",
+            { win = "input", height = 1, border = "bottom" },
+            { win = "list", border = "none" },
+            { win = "preview", title = "{preview}", height = 0.4, border = "top" },
+        },
+    },
 }

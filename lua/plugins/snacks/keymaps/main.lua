@@ -16,7 +16,7 @@ vim.keymap.set("n", "/", function()
 end, { desc = "Search Current File" })
 
 vim.keymap.set("n", "<leader>:", function()
-    Snacks.picker.command_history()
+    Snacks.picker.command_history({ layout = "select" })
 end, { desc = "Command History" })
 
 vim.keymap.set("n", "<leader>.", function()
