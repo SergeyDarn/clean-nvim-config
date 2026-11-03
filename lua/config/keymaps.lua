@@ -27,8 +27,8 @@ vim.keymap.set("n", "<leader>w", "<cmd>botright vsplit<cr>", { desc = "Vertical 
 vim.keymap.set({ "n", "o", "x" }, "e", "$", { desc = "Go to end of the line" })
 vim.keymap.set({ "n", "o", "x" }, "0", "^", { desc = "Go to start of the line" })
 
-vim.keymap.set("n", "<S-j>", "}", { desc = "Scroll down fast" })
-vim.keymap.set("n", "<S-k>", "{", { desc = "Scroll up fast" })
+vim.keymap.set("n", "J", "}", { desc = "Scroll down fast" })
+vim.keymap.set("n", "K", "{", { desc = "Scroll up fast" })
 
 --
 -- Plugins and Vim
