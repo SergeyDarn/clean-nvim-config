@@ -27,6 +27,12 @@ vim.keymap.set("n", "<leader>w", "<cmd>botright vsplit<cr>", { desc = "Vertical 
 vim.keymap.set({ "n", "o", "x" }, "e", "$", { desc = "Go to end of the line" })
 vim.keymap.set({ "n", "o", "x" }, "0", "^", { desc = "Go to start of the line" })
 
+--
+-- Move highlighed text
+--
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted text down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move highlighted text up" })
+
 vim.keymap.set("n", "J", "}", { desc = "Scroll down fast" })
 vim.keymap.set("n", "K", "{", { desc = "Scroll up fast" })
 
