@@ -35,7 +35,7 @@ return {
             height = 0.8,
             {
                 box = "vertical",
-                border = "rounded",
+                border = vim.g.border_type,
                 title = "{title} {live} {flags}",
                 { win = "input", height = 1, border = "bottom" },
                 { win = "list", border = "none" },
@@ -43,7 +43,7 @@ return {
             {
                 win = "preview",
                 title = "{preview}",
-                border = "rounded",
+                border = vim.g.border_type,
                 width = 0.7,
             },
         },
@@ -61,11 +61,11 @@ return {
                 win = "preview",
                 title = "{preview}",
                 height = 0.6,
-                border = true,
+                border = vim.g.border_type,
             },
             {
                 box = "vertical",
-                border = true,
+                border = vim.g.border_type,
                 title = "{title} {live} {flags}",
                 title_pos = "center",
                 { win = "input", height = 1, border = "bottom" },

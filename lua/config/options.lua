@@ -28,9 +28,6 @@ vim.o.wrap = false
 -- Enable undo/redo changes even after closing and reopening a file
 vim.o.undofile = true
 
--- Show which line your cursor is on
-vim.o.cursorline = true
-
 -- Minimal number of screen lines to keep above and below the cursor
 -- (amazingly improves experience of scrolling the file)
 vim.o.scrolloff = 10
@@ -48,3 +45,8 @@ vim.o.updatetime = 250
 vim.schedule(function()
     vim.o.clipboard = "unnamedplus"
 end)
+
+--
+-- Set global variable for border type
+--
+vim.g.border_type = "rounded"

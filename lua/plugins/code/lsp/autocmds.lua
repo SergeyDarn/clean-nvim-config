@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         --- @class vim.lsp.util.open_floating_preview.Opts
         local WINDOW_CONFIG = {
-            border = "rounded",
+            border = vim.g.border_type,
             max_height = 15,
             anchor_bias = "below",
         }
