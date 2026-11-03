@@ -27,3 +27,11 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     pattern = "*",
     command = 'silent! normal! g`"zv',
 })
+
+--
+-- Open help in fullscreen
+--
+vim.api.nvim_create_autocmd("Filetype", {
+    pattern = "help",
+    command = "silent! | only",
+})
