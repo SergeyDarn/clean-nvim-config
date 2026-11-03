@@ -43,3 +43,7 @@ vim.keymap.set("n", "<leader>sl", function()
         live = false,
     })
 end, { desc = "Logs" })
+
+vim.keymap.set("n", "<leader>sk", function()
+    Snacks.picker.keymaps()
+end, { desc = "Keymaps" })
