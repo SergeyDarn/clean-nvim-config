@@ -5,7 +5,7 @@
       "src": "https://github.com/dzfrias/arena.nvim"
     },
     "arrow.nvim": {
-      "rev": "c8fdce82d1b997232f56f93ec8592640e6a03599",
+      "rev": "e8c435dadf88c2e915a09f772c04c8438d4b1d38",
       "src": "https://github.com/SergeyDarn/arrow.nvim"
     },
     "blink.cmp": {
@@ -37,10 +37,6 @@
       "rev": "4bcd99167c265f135886b282baad77afe06206b2",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
-    "grapple.nvim": {
-      "rev": "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7",
-      "src": "https://github.com/cbochs/grapple.nvim"
-    },
     "grug-far.nvim": {
       "rev": "91b7e58b6ffc6ddad5acb7a7c1df21257724449e",
       "src": "https://github.com/MagicDuck/grug-far.nvim"
@@ -52,10 +48,6 @@
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
-    },
-    "marks.nvim": {
-      "rev": "f353e8c08c50f39e99a9ed474172df7eddd89b72",
-      "src": "https://github.com/chentoast/marks.nvim"
     },
     "markview.nvim": {
       "rev": "aadb6d817577d553bbef61e8b9073f1bf4b87e08",
