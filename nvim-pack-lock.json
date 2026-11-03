@@ -4,6 +4,10 @@
       "rev": "9ebbf55b4f0e3815e3caf3264cc1a2721b5111e9",
       "src": "https://github.com/dzfrias/arena.nvim"
     },
+    "arrow.nvim": {
+      "rev": "c8fdce82d1b997232f56f93ec8592640e6a03599",
+      "src": "https://github.com/SergeyDarn/arrow.nvim"
+    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",
@@ -162,6 +166,10 @@
     "yanky.nvim": {
       "rev": "adcabd8512bead30184916fa9277e73c021ef099",
       "src": "https://github.com/gbprod/yanky.nvim"
+    },
+    "yazi.nvim": {
+      "rev": "561046156b317c1a59941a1aacb6c91603c3ff78",
+      "src": "https://github.com/mikavilpas/yazi.nvim"
     }
   }
 }

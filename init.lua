@@ -203,8 +203,8 @@ require("plugins.code")
 vim.pack.add({
     gh("dzfrias/arena.nvim"),
     gh("folke/flash.nvim"),
-    gh("chentoast/marks.nvim"),
-    gh("cbochs/grapple.nvim"),
+    gh("SergeyDarn/arrow.nvim"),
+    gh("mikavilpas/yazi.nvim"),
 })
 
 require("plugins.navigation")
@@ -232,14 +232,3 @@ require("neovim_tips").setup({
 vim.keymap.set("n", "<leader>?t", "<cmd>NeovimTips<cr>", { desc = "Tips" })
 vim.keymap.set("n", "<leader>?r", "<cmd>NeovimTipsRandom<cr>", { desc = "Random Tip" })
 vim.keymap.set("n", "<leader>?b", "<cmd>NeovimTipsBookmarks<cr>", { desc = "Bookmarked Tips" })
-
---
--- NOTE: try plugins
---
--- blink-cmp-yanky
--- lua snippets (config from kickstart.nvim)
--- vim-dadbod for working with databases
--- nvim-dap-go for debugging
--- tabout
--- twilight (snacks dim) for focus on the code block I'm typing in
--- Find plugin for file local history (like in phpstorm)

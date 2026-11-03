@@ -29,10 +29,3 @@ end, { desc = "Notes" })
 vim.keymap.set("n", "<leader>n", function()
     Snacks.picker.notifications()
 end, { desc = "Notification History" })
-
---
--- File Explorer
---
-vim.keymap.set("n", "<leader>e", function()
-    Snacks.explorer()
-end, { desc = "Toggle File Explorer" })

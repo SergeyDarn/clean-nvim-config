@@ -2,7 +2,6 @@ local layouts = require("plugins.snacks.layouts")
 
 require("snacks").setup({
     notifier = { enabled = true },
-    explorer = { enabled = true },
     scratch = {
         ft = "markdown",
         win = {
@@ -17,20 +16,6 @@ require("snacks").setup({
         },
     },
     picker = {
-        sources = {
-            explorer = {
-                auto_close = true,
-                hidden = true,
-                ignored = true,
-                layout = {
-                    preset = "default",
-                    layout = {
-                        min_width = 0,
-                        width = 0.6,
-                    },
-                },
-            },
-        },
         layout = {
             preset = function()
                 return "dropdown"

@@ -1,15 +1,9 @@
 local arena = require("arena")
-
-local exec = function(win, cmd)
-    local current = win:current()
-    win:close()
-    local info = vim.fn.getbufinfo(current.bufnr)[1]
-
-    vim.cmd(cmd .. vim.fn.bufname(current.bufnr))
-    vim.fn.cursor(info.lnum, 0)
-end
+local utils = require("utils")
 
 arena.setup({
+    ignore_current = true,
+    buf_options = {},
     always_context = {
         "go.mod",
         "main.go",
@@ -18,18 +12,19 @@ arena.setup({
         "config.toml",
         "README.md",
     },
-    buf_options = {},
     keybinds = {
         ["v"] = function(win)
-            exec(win, "botright vsplit ")
+            local buffer_name = vim.fn.bufname(win:current().bufnr)
+
+            utils.split_vertical(buffer_name)
         end,
     },
     algorithm = {
         recency_factor = 1,
-        frequency_factor = 0.7,
+        frequency_factor = 0.5,
     },
 })
 
 vim.keymap.set("n", "<leader>a", function()
     arena.toggle()
-end, { desc = "Arena" })
+end, { desc = "Arena", noremap = true })
