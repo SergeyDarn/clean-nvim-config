@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "aerial.nvim": {
+      "rev": "28fe6e822ae344544c379d60fcb13c9519a1f08a",
+      "src": "https://github.com/stevearc/aerial.nvim"
+    },
     "arena.nvim": {
       "rev": "9ebbf55b4f0e3815e3caf3264cc1a2721b5111e9",
       "src": "https://github.com/dzfrias/arena.nvim"

@@ -227,6 +227,11 @@ vim.pack.add({
     -- Neovim tips
     --
     gh("saxon1964/neovim-tips"),
+
+    --
+    -- Markdown outline
+    --
+    gh("stevearc/aerial.nvim"),
 })
 
 --
@@ -242,3 +247,11 @@ require("neovim_tips").setup({
 vim.keymap.set("n", "<leader>?t", "<cmd>NeovimTips<cr>", { desc = "Tips" })
 vim.keymap.set("n", "<leader>?r", "<cmd>NeovimTipsRandom<cr>", { desc = "Random Tip" })
 vim.keymap.set("n", "<leader>?b", "<cmd>NeovimTipsBookmarks<cr>", { desc = "Bookmarked Tips" })
+
+require("aerial").setup({
+    layout = {
+        default_direction = "prefer_left",
+    },
+})
+
+vim.keymap.set("n", "<leader>mo", "<cmd>AerialToggle<cr>", { desc = "Markdown Outline" })
