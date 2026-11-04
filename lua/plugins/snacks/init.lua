@@ -10,9 +10,10 @@ require("snacks").setup({
         },
     },
     lazygit = {
+        configure = false,
         win = {
-            width = 100,
-            height = 100,
+            width = 0,
+            height = 0,
         },
     },
     picker = {

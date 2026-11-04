@@ -2,10 +2,7 @@
 -- Lazygit
 --
 vim.keymap.set("n", "<leader>gg", function()
-    Snacks.lazygit({
-        -- Use normal lazygit theme
-        configure = false,
-    })
+    Snacks.lazygit()
 end, { desc = "Lazygit" })
 
 --
