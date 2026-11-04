@@ -234,6 +234,8 @@ vim.pack.add({
 --
 require("markview").setup({})
 
+vim.keymap.set("n", "<leader>mt", "<cmd>Markview Toggle<cr>", { desc = "Toggle Markview" })
+
 require("neovim_tips").setup({
     bookmark_symbol = "🔖",
 })
