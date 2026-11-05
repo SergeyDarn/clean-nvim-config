@@ -2,17 +2,16 @@ require("mini.icons").setup({})
 -- Used for backwards compatibility with plugins that require `nvim-web-devicons` (e.g. telescope.nvim)
 MiniIcons.mock_nvim_web_devicons()
 
+local mainKey = "z"
+
 require("mini.surround").setup({
     mappings = {
-        add = "qa", -- Add surrounding in Normal and Visual modes
-        delete = "qd", -- Delete surrounding
-        find = "qf", -- Find surrounding (to the right)
-        find_left = "qF", -- Find surrounding (to the left)
-        highlight = "qh", -- Highlight surrounding
-        replace = "qr", -- Replace surrounding
-
-        suffix_last = "l", -- Suffix to search with "prev" method
-        suffix_next = "n", -- Suffix to search with "next" method
+        add = mainKey .. "a", -- Add surrounding in Normal and Visual modes
+        delete = mainKey .. "d", -- Delete surrounding
+        find = mainKey .. "f", -- Find surrounding (to the right)
+        find_left = mainKey .. "F", -- Find surrounding (to the left)
+        highlight = mainKey .. "h", -- Highlight surrounding
+        replace = mainKey .. "r", -- Replace surrounding
     },
 })
 require("mini.ai").setup({
