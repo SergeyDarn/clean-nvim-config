@@ -41,3 +41,27 @@ vim.keymap.set("n", "K", "{", { desc = "Scroll up fast" })
 --
 vim.keymap.set("n", "<leader>vr", "<cmd>write | restart<CR>", { desc = "Restart Neovim" })
 vim.keymap.set("n", "<leader>vu", vim.pack.update, { desc = "Update VimPack Plugins" })
+
+--
+-- Toggle Markdown Todo
+--
+
+local emptyTodoPattern = "%[ %]"
+local completedTodoPattern = "%[x%]"
+local newTodoPattern = "^%s*(-?%s*)"
+
+vim.keymap.set("n", "<leader>x", function()
+    local line = vim.api.nvim_get_current_line()
+    local new_line
+
+    if line:find(emptyTodoPattern) then
+        new_line = line:gsub(emptyTodoPattern, "[x]", 1)
+    elseif line:find(completedTodoPattern) then
+        new_line = line:gsub(completedTodoPattern, "[ ]", 1)
+    else
+        -- Add checkbox if line doesn't have one
+        new_line = line:gsub(newTodoPattern, "%1- [ ] ", 1)
+    end
+
+    vim.api.nvim_set_current_line(new_line)
+end, { desc = "Toggle Markdown todo checkbox" })
