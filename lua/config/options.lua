@@ -50,3 +50,9 @@ end)
 -- Set global variable for border type
 --
 vim.g.border_type = "rounded"
+
+--
+-- Allow some vim motions when Russian is active
+--
+vim.o.langmap =
+    "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
