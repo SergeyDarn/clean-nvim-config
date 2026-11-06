@@ -9,5 +9,7 @@ require("which-key").setup({
         { "<leader>v", group = "Neovim", mode = { "n", "v" }, icon = "" },
         { "<leader>q", group = "Exit", mode = { "n", "v" } },
         { "<leader>?", group = "Neovim Tips", mode = { "n", "v" }, icon = "" },
+        { "<leader>t", group = "Trouble", mode = { "n", "v" }, icon = "" },
+        { "<leader>m", group = "Markdown", mode = { "n", "v" }, icon = "" },
     },
 })
