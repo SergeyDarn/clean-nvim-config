@@ -1,5 +1,19 @@
-require("chainsaw").setup({})
+local chainsaw = require("chainsaw")
 
-vim.keymap.set("n", "<leader>l", function()
-    require("chainsaw").variableLog()
-end, { desc = "Log variable" })
+chainsaw.setup({})
+
+vim.keymap.set("n", "<leader>ll", function()
+    chainsaw.variableLog()
+end, { desc = "Log Variable" })
+
+vim.keymap.set("n", "<leader>lo", function()
+    chainsaw.objectLog()
+end, { desc = "Log Object" })
+
+vim.keymap.set("n", "<leader>ls", function()
+    chainsaw.emojiLog()
+end, { desc = "Log Simple" })
+
+vim.keymap.set("n", "<leader>lt", function()
+    chainsaw.timeLog()
+end, { desc = "Log Measure Time" })
