@@ -8,3 +8,4 @@ require("nvim-autopairs").setup({})
 require("nvim-ts-autotag").setup({})
 
 require("plugins.code.grug_far")
+require("plugins.code.trouble")

@@ -15,6 +15,6 @@ vim.keymap.set("n", "gr", function()
     Snacks.picker.lsp_references()
 end, { desc = "LSP: References" })
 
-vim.keymap.set("n", "<leader>sc", function()
+vim.keymap.set("n", "<leader>ss", function()
     Snacks.picker.lsp_symbols()
 end, { desc = "LSP: Symbols" })

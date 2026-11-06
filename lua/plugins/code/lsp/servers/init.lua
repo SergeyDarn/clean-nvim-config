@@ -5,8 +5,7 @@ return {
     lua_ls = require("plugins.code.lsp.servers.lua_ls"),
     gopls = require("plugins.code.lsp.servers.gopls"),
 
-    -- TODO:
-    -- add svelte too
+    -- NOTE:later add svelte too
     cssls = {},
     emmet_ls = {},
     emmet_language_server = {},

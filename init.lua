@@ -199,6 +199,11 @@ vim.pack.add({
     -- Search and replace in multiple files
     --
     gh("MagicDuck/grug-far.nvim"),
+
+    --
+    -- Better quickfix list
+    --
+    gh("folke/trouble.nvim"),
 })
 require("plugins.code")
 

@@ -1,7 +1,9 @@
-local servers = require("plugins.code.lsp.servers")
-
-require("plugins.code.lsp.autocmds")
+--
+-- ! Important. We need to load mason before requiring lsp servers,
+-- otherwise there's an error
+--
 require("plugins.code.lsp.mason")
+require("plugins.code.lsp.autocmds")
 
 --
 -- Progress bar
@@ -23,6 +25,7 @@ vim.diagnostic.config({
 --
 -- Enable LSP servers
 --
+local servers = require("plugins.code.lsp.servers")
 for name, server in pairs(servers) do
     vim.lsp.config(name, server)
     vim.lsp.enable(name)
