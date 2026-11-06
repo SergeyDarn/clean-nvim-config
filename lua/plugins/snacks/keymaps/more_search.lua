@@ -47,3 +47,23 @@ end, { desc = "Logs" })
 vim.keymap.set("n", "<leader>sk", function()
     Snacks.picker.keymaps()
 end, { desc = "Keymaps" })
+
+vim.keymap.set("n", "<leader>ms", function()
+    Snacks.picker.grep_word({
+        title = "Todos",
+        cmd = "rg",
+        search = "^\\s*- \\[([ xX])\\]", -- Matches '- [ ]', '- [x]', or '- [X]'
+        regex = true,
+        glob = "*.md",
+    })
+end, { desc = "Markdown Todos" })
+
+vim.keymap.set("n", "<leader>md", function()
+    Snacks.picker.grep_word({
+        title = "Completed Todos",
+        cmd = "rg",
+        search = "^\\s*- \\[([xX])\\]", -- Matches '- [x]', or '- [X]'
+        regex = true,
+        glob = "*.md",
+    })
+end, { desc = "Markdown Completed Todos" })
