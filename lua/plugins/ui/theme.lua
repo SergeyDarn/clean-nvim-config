@@ -1,16 +1,26 @@
 local catppuccin = require("catppuccin")
 
-local is_transparent_by_default = true
+local isTransparentByDefault = true
 local textAccentColor = "#fab387"
 local borderColor = "#454759"
+local transparentHighlightColor = borderColor
+local normalHighlightColor = "#2a2b3c"
+
+local function getHighlightColor(isTransprentTheme)
+    if isTransprentTheme then
+        return transparentHighlightColor
+    end
+
+    return normalHighlightColor
+end
 
 catppuccin.setup({
     flavour = "mocha",
     auto_integrations = true,
-    transparent_background = is_transparent_by_default,
+    transparent_background = isTransparentByDefault,
     float = {
         solid = true,
-        transparent = is_transparent_by_default,
+        transparent = isTransparentByDefault,
     },
     custom_highlights = function(colors)
         local utils = require("catppuccin.utils.colors")
@@ -28,19 +38,21 @@ catppuccin.setup({
 -- for consistent theme behavior after switching them
 -- (catppuccin persists the changed settings even after restart for some reason)
 --
-local function setTheme(cursorLine)
+local function setTheme(isTransparent)
     catppuccin.compile()
     vim.cmd.colorscheme("catppuccin-nvim")
 
-    vim.o.cursorline = cursorLine
-    vim.g.themeCursorLine = cursorLine
+    vim.o.cursorline = not isTransparent
+    vim.g.themeCursorLine = not isTransparent
+    vim.api.nvim_set_hl(0, "CursorLine", { bg = getHighlightColor(isTransparent) })
 end
 
-setTheme(not is_transparent_by_default)
+setTheme(isTransparentByDefault)
 
 vim.keymap.set("n", "<leader>vt", function()
-    catppuccin.options.transparent_background = not catppuccin.options.transparent_background
-    catppuccin.options.float.transparent = not catppuccin.options.float.transparent
+    local isTransparentNow = catppuccin.options.float.transparent
+    catppuccin.options.transparent_background = not isTransparentNow
+    catppuccin.options.float.transparent = not isTransparentNow
 
-    setTheme(not vim.o.cursorline)
+    setTheme(not isTransparentNow)
 end, { desc = "Toggle Transparency" })
