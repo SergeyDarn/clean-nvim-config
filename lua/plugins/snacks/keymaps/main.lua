@@ -8,6 +8,7 @@ end, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>/", function()
     Snacks.picker.grep({
         regex = false,
+        args = { "-i" },
     })
 end, { desc = "Search" })
 
