@@ -242,7 +242,30 @@ vim.pack.add({
 --
 -- NOTE: later I can fix how code blocks look with the transparent theme
 --
-require("markview").setup({})
+require("markview").setup({
+    markdown = {
+        headings = {
+            heading_1 = {
+                sign = "",
+            },
+            heading_2 = {
+                sign = "",
+            },
+            heading_3 = {
+                sign = "",
+            },
+            heading_4 = {
+                sign = "",
+            },
+            heading_5 = {
+                sign = "",
+            },
+            heading_6 = {
+                sign = "",
+            },
+        },
+    },
+})
 
 vim.keymap.set("n", "<leader>mt", "<cmd>Markview Toggle<cr>", { desc = "Toggle Markview" })
 
