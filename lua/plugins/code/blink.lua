@@ -25,7 +25,16 @@ require("blink.cmp").setup({
 
     completion = {
         documentation = { auto_show = false },
-        menu = { auto_show = true },
+        menu = {
+            auto_show = true,
+            border = vim.g.border_type,
+            draw = {
+                columns = {
+                    { "kind_icon", "kind", gap = 1 },
+                    { "label", "label_description", gap = 1 },
+                },
+            },
+        },
         ghost_text = { enabled = true },
     },
 
@@ -52,6 +61,7 @@ require("blink.cmp").setup({
         window = {
             show_documentation = false,
             max_width = 60,
+            border = vim.g.border_type,
         },
     },
 })

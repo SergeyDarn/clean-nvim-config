@@ -29,6 +29,10 @@ catppuccin.setup({
             FloatBorder = { fg = borderColor, bg = "none" },
             SnacksPickerMatch = { fg = textAccentColor, bg = "none" },
             LineNr = { fg = utils.darken(colors.lavender, 0.7) },
+
+            BlinkCmpMenuBorder = { fg = borderColor },
+            BlinkCmpLabel = { fg = colors.text },
+            BlinkCmpLabelMatch = { fg = textAccentColor },
         }
     end,
 })
