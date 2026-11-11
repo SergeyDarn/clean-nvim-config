@@ -37,6 +37,9 @@ return {
         Lua = {
             -- Disable formatting (formatting is done by stylua)
             format = { enable = false },
+            diagnostics = {
+                disable = { "missing-parameters", "missing-fields" },
+            },
         },
     },
 }
