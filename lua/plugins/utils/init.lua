@@ -26,6 +26,7 @@ require("guess-indent").setup({})
 
 require("rooter").setup({
     root_patterns = { ".git/", "go.mod", "config.toml", "package.json", "Makefile" },
+    outermost = false,
 })
 
 require("comfy-line-numbers").setup({})
