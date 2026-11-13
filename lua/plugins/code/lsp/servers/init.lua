@@ -5,6 +5,7 @@ return {
     lua_ls = require("plugins.code.lsp.servers.lua_ls"),
     gopls = require("plugins.code.lsp.servers.gopls"),
     pylsp = require("plugins.code.lsp.servers.pylsp"),
+    marksman = {},
 
     -- NOTE:later add svelte too
     cssls = {},
