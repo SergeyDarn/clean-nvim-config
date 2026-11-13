@@ -17,6 +17,7 @@ require("conform").setup({
             go = true,
             json = true,
             toml = true,
+            python = true,
         }
 
         if enabled_filetypes[vim.bo[bufnr].filetype] then
@@ -35,9 +36,10 @@ require("conform").setup({
         go = { "goimports", "gofumpt" },
         json = { "prettierd", "prettier", "jq", stop_after_first = true },
         toml = { "taplo" },
+        python = { "isort", "black" },
+        --
         -- rust = { 'rustfmt' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
