@@ -234,6 +234,11 @@ vim.pack.add({
     gh("OXY2DEV/markview.nvim"),
 
     --
+    -- Add better styling to vim docs
+    --
+    gh("OXY2DEV/helpview.nvim"),
+
+    --
     -- Neovim tips
     --
     gh("saxon1964/neovim-tips"),
@@ -280,6 +285,8 @@ require("neovim_tips").setup({
 vim.keymap.set("n", "<leader>?t", "<cmd>NeovimTips<cr>", { desc = "Tips" })
 vim.keymap.set("n", "<leader>?r", "<cmd>NeovimTipsRandom<cr>", { desc = "Random Tip" })
 vim.keymap.set("n", "<leader>?b", "<cmd>NeovimTipsBookmarks<cr>", { desc = "Bookmarked Tips" })
+
+require("helpview").setup({})
 
 require("aerial").setup({
     layout = {
