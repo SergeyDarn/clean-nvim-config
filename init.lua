@@ -204,6 +204,11 @@ vim.pack.add({
     -- Better quickfix list
     --
     gh("folke/trouble.nvim"),
+
+    --
+    -- Quickly toggle a block of code between a single line or multiple lines
+    --
+    gh("Wansmer/treesj"),
 })
 require("plugins.code")
 
