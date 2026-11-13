@@ -7,7 +7,6 @@ return {
     pylsp = require("plugins.code.lsp.servers.pylsp"),
     marksman = {},
 
-    -- NOTE:later add svelte too
     cssls = {},
     emmet_ls = {},
     emmet_language_server = {},

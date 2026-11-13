@@ -186,8 +186,6 @@ vim.pack.add({
     --
     -- Auto pairs
     --
-    -- TODO: check default config
-    -- and see if there might be better options for me
     gh("windwp/nvim-autopairs"),
 
     --
@@ -249,9 +247,6 @@ vim.pack.add({
     gh("stevearc/aerial.nvim"),
 })
 
---
--- NOTE: later I can fix how code blocks look with the transparent theme
---
 require("markview").setup({
     markdown = {
         headings = {
