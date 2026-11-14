@@ -67,3 +67,29 @@ vim.keymap.set("n", "<leader>md", function()
         glob = "*.md",
     })
 end, { desc = "Markdown Completed Todos" })
+
+vim.keymap.set("n", "<leader>sg", function()
+    Snacks.picker.files({
+        dirs = { "~" },
+        exclude = {
+            "Library",
+            "Documents",
+            "go",
+            ".cache",
+            ".cargo",
+            ".oh-my-zsh",
+            ".ollama",
+            ".rustup",
+            ".nvm",
+            ".yarn",
+            ".npm",
+        },
+        hidden = true,
+    })
+end, { desc = "Global" })
+
+vim.keymap.set("n", "<leader>sn", function()
+    Snacks.picker.files({
+        dirs = { "~/Synced/Notes" },
+    })
+end, { desc = "Notes" })
