@@ -83,6 +83,7 @@ vim.keymap.set("n", "<leader>sg", function()
             ".nvm",
             ".yarn",
             ".npm",
+            ".zsh_sessions",
         },
         hidden = true,
     })
