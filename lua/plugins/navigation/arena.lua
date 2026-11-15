@@ -13,7 +13,7 @@ arena.setup({
         "README.md",
     },
     keybinds = {
-        ["v"] = function(win)
+        ["w"] = function(win)
             local buffer_name = vim.fn.bufname(win:current().bufnr)
 
             utils.split_vertical(buffer_name)
