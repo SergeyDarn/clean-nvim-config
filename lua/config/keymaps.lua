@@ -12,6 +12,11 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 
 --
+-- Go to last buffer
+--
+vim.keymap.set("n", "<leader><Tab>", "<C-^>", { desc = "Go to last buffer" })
+
+--
 -- Quit all
 --
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
