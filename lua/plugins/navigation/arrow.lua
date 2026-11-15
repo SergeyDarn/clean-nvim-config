@@ -7,7 +7,6 @@ require("arrow").setup({
     buffer_leader_key = "m",
     global_bookmarks = true,
     mappings = {
-        edit = "E",
         prev_item = "H",
         next_item = "L",
     },
