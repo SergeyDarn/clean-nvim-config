@@ -86,6 +86,7 @@ vim.keymap.set("n", "<leader>sg", function()
             ".zsh_sessions",
             "node_modules",
             ".venv",
+            "go.sum",
         },
         hidden = true,
         ignored = true,
