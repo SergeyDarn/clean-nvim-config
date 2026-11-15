@@ -19,7 +19,7 @@ require("snacks").setup({
     picker = {
         layout = {
             preset = function()
-                return "dropdown"
+                return "telescope"
             end,
         },
         layouts = layouts,
