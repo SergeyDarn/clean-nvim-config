@@ -94,6 +94,11 @@ vim.pack.add({
     -- Undo tree
     --
     gh("jiaoshijie/undotree"),
+
+    --
+    -- Close buffers after a certain amount of time
+    --
+    gh("chrisgrieser/nvim-early-retirement"),
 })
 require("plugins.utils")
 

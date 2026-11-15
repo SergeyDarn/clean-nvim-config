@@ -64,6 +64,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
                 callback = function(event2)
                     vim.lsp.buf.clear_references()
                     vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
+
+                    --
+                    -- Stop the lsp after all the buffers with it are closed
+                    -- (Primarily neededfor lua-lsp that eats up more than 1gb of ram
+                    --  + there are multiple of them - 1 per lua project
+                    --  + sometimes they duplicate too)
+                    --
+                    -- During LspDetach, the closing buffer is still in the list,
+                    -- so a count of 1 (or 0) means no other buffers are using it.
+                    if #client.attached_buffers <= 1 then
+                        client:stop()
+                    end
                 end,
             })
         end

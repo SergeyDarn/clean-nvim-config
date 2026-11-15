@@ -105,6 +105,10 @@
       "rev": "c38210b379d5a61b3e1bf918cf787212fa1eedd9",
       "src": "https://github.com/chrisgrieser/nvim-chainsaw"
     },
+    "nvim-early-retirement": {
+      "rev": "d73ddf7b8b776aa917947142873a05f733103757",
+      "src": "https://github.com/chrisgrieser/nvim-early-retirement"
+    },
     "nvim-highlight-colors": {
       "rev": "e4c7af0211866162d999ce0bdd6a029302e19139",
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
