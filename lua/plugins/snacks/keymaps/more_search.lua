@@ -84,8 +84,11 @@ vim.keymap.set("n", "<leader>sg", function()
             ".yarn",
             ".npm",
             ".zsh_sessions",
+            "node_modules",
+            ".venv",
         },
         hidden = true,
+        ignored = true,
     })
 end, { desc = "Global" })
 
