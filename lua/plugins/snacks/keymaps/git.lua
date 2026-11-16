@@ -14,7 +14,7 @@ vim.keymap.set("n", "<leader>gb", function()
     })
 end, { desc = "Git Blame" })
 
-vim.keymap.set("n", "<leader>gl", function()
+vim.keymap.set("n", "<leader>gf", function()
     Snacks.picker.git_log_file({
         layout = "telescope",
     })
