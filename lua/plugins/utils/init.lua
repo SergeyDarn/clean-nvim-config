@@ -59,7 +59,7 @@ vim.keymap.set("n", "<leader>u", function()
     undotree.toggle()
 end, { desc = "Toggle Undo Tree" })
 require("early-retirement").setup({
-    retirementAgeMins = 10,
+    retirementAgeMins = 20,
 
     --
     -- Save and close buffers with unsaved changes
