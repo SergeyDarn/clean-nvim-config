@@ -48,7 +48,9 @@ require("plugins.utils.yanky")
 
 require("nvim-highlight-colors").setup({})
 
-require("tabout").setup({})
+require("tabout").setup({
+    ignore_beginning = false,
+})
 
 local undotree = require("undotree")
 undotree.setup({})
