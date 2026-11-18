@@ -29,6 +29,10 @@
             "rev": "016802de402556da54c36bd7359b441266b01cdd",
             "src": "https://github.com/stevearc/conform.nvim"
         },
+        "diffview-plus.nvim": {
+            "rev": "fae72d6c981075dce2e0f946f002382ce0cb44e1",
+            "src": "https://github.com/dlyongemallo/diffview-plus.nvim"
+        },
         "fidget.nvim": {
             "rev": "9e0201673e08e997e7cf52afca5565c70bd117f3",
             "src": "https://github.com/j-hui/fidget.nvim"

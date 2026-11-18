@@ -104,6 +104,13 @@ vim.pack.add({
     -- Close buffers after a certain amount of time
     --
     gh("chrisgrieser/nvim-early-retirement"),
+
+    --
+    -- Git diffviewer
+    --- using it for interactively splitting commits with jj split
+    --- to resolve merge conflicts I'm using ec
+    ---
+    gh("dlyongemallo/diffview-plus.nvim"),
 })
 require("plugins.utils")
 
