@@ -18,6 +18,6 @@ vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
-vim.keymap.set("n", "<leader>y", function()
+vim.keymap.set({ "n", "x" }, "<leader>y", function()
     Snacks.picker.yanky()
 end, { desc = "Yanky Clipboard" })
