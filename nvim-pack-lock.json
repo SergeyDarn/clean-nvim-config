@@ -53,6 +53,10 @@
             "rev": "06006b471890f19efeb199ffab5da49a2d624619",
             "src": "https://github.com/OXY2DEV/helpview.nvim"
         },
+        "im-switch.nvim": {
+            "rev": "f2b6e277e475ce280a281a1b45809e5719c28221",
+            "src": "https://github.com/chojs23/im-switch.nvim"
+        },
         "lualine.nvim": {
             "rev": "221ce6b2d999187044529f49da6554a92f740a96",
             "src": "https://github.com/nvim-lualine/lualine.nvim"

@@ -36,3 +36,5 @@ undotree.setup({})
 vim.keymap.set("n", "<leader>u", function()
     undotree.toggle()
 end, { desc = "Toggle Undo Tree" })
+
+require("im-switch").setup({})

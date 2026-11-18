@@ -96,6 +96,11 @@ vim.pack.add({
     gh("jiaoshijie/undotree"),
 
     --
+    -- Automatically switch to english when in normal mode
+    --
+    gh("chojs23/im-switch.nvim"),
+
+    --
     -- Close buffers after a certain amount of time
     --
     gh("chrisgrieser/nvim-early-retirement"),
