@@ -1,5 +1,6 @@
 require("plugins.utils.mini")
 require("plugins.utils.early-retirement")
+require("plugins.utils.yanky")
 
 require("guess-indent").setup({})
 
@@ -22,8 +23,6 @@ require("gitsigns").setup({
         },
     },
 })
-
-require("plugins.utils.yanky")
 
 require("nvim-highlight-colors").setup({})
 
