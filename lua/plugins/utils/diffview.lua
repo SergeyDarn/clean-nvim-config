@@ -1,6 +1,9 @@
 local actions = require("diffview.actions")
 
 require("diffview").setup({
+    view = {
+        merge_tool = { layout = "diff3_vertical" },
+    },
     file_panel = {
         listing_style = "tree",
         win_config = { position = "left", width = 25 },
@@ -9,13 +12,13 @@ require("diffview").setup({
         diff3 = {
             {
                 { "n", "x" },
-                "gml",
+                "gmt",
                 actions.diffget("ours"),
                 { desc = "Obtain the diff hunk from the OURS version of the file" },
             },
             {
                 { "n", "x" },
-                "gmr",
+                "gmb",
                 actions.diffget("theirs"),
                 { desc = "Obtain the diff hunk from the THEIRS version of the file" },
             },
