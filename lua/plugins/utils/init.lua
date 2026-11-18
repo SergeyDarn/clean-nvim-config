@@ -2,6 +2,7 @@ require("plugins.utils.mini")
 require("plugins.utils.early-retirement")
 require("plugins.utils.yanky")
 require("plugins.utils.diffview")
+require("plugins.utils.external-apps")
 
 require("guess-indent").setup({})
 
