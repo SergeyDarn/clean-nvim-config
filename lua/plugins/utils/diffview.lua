@@ -25,3 +25,8 @@ require("diffview").setup({
         },
     },
 })
+
+vim.api.nvim_set_hl(0, "DiffviewDiffAdd", { bg = "#092B2B" })
+vim.api.nvim_set_hl(0, "DiffviewDiffAddInline", { bg = "#054645" })
+vim.api.nvim_set_hl(0, "DiffviewDiffDelete", { bg = "#331523" })
+vim.api.nvim_set_hl(0, "DiffviewDiffDeleteInline", { bg = "#561F37" })
