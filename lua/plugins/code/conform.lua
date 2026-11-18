@@ -20,11 +20,17 @@ require("conform").setup({
             python = true,
         }
 
-        if enabled_filetypes[vim.bo[bufnr].filetype] then
-            return { timeout_ms = 500, lsp_format = "fallback" }
-        else
+        -- Skip any window currently in Neovim diff mode (including working-tree files in Diffview)
+        local winid = vim.fn.bufwinid(bufnr)
+        if winid ~= -1 and vim.wo[winid].diff then
             return nil
         end
+
+        if enabled_filetypes[vim.bo[bufnr].filetype] then
+            return { timeout_ms = 500, lsp_format = "fallback" }
+        end
+
+        return nil
     end,
 
     default_format_opts = {
