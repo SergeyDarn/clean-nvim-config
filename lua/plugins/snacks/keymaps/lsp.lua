@@ -18,3 +18,7 @@ end, { desc = "LSP: References" })
 vim.keymap.set("n", "<leader>ss", function()
     Snacks.picker.lsp_symbols()
 end, { desc = "LSP: Symbols" })
+
+vim.keymap.set("n", "<leader>sc", function()
+    Snacks.picker.lsp_workspace_symbols()
+end, { desc = "LSP: Workspace Symbols" })
