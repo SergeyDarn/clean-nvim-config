@@ -1,17 +1,19 @@
 local catppuccin = require("catppuccin")
+local Colorscheme = require("plugins.ui.Colorscheme")
+
+local COLOR_TEXT_ACCENT = Colorscheme.colors.PEACH
+local COLOR_BORDER = "#454759"
+local COLOR_TRANSPARENT_HIGHLIGHT = COLOR_BORDER
+local COLOR_NORMAL_HIGHLIGHT = "#2a2b3c"
 
 local isTransparentByDefault = true
-local textAccentColor = "#fab387"
-local borderColor = "#454759"
-local transparentHighlightColor = borderColor
-local normalHighlightColor = "#2a2b3c"
 
 local function getHighlightColor(isTransprentTheme)
     if isTransprentTheme then
-        return transparentHighlightColor
+        return COLOR_TRANSPARENT_HIGHLIGHT
     end
 
-    return normalHighlightColor
+    return COLOR_NORMAL_HIGHLIGHT
 end
 
 catppuccin.setup({
@@ -26,13 +28,13 @@ catppuccin.setup({
         local utils = require("catppuccin.utils.colors")
 
         return {
-            FloatBorder = { fg = borderColor, bg = "none" },
-            SnacksPickerMatch = { fg = textAccentColor, bg = "none" },
+            FloatBorder = { fg = COLOR_BORDER, bg = "none" },
+            SnacksPickerMatch = { fg = COLOR_TEXT_ACCENT, bg = "none" },
             LineNr = { fg = utils.darken(colors.lavender, 0.7) },
 
-            BlinkCmpMenuBorder = { fg = borderColor },
+            BlinkCmpMenuBorder = { fg = COLOR_BORDER },
             BlinkCmpLabel = { fg = colors.text },
-            BlinkCmpLabelMatch = { fg = textAccentColor },
+            BlinkCmpLabelMatch = { fg = COLOR_TEXT_ACCENT },
         }
     end,
 })
@@ -49,6 +51,7 @@ local function setTheme(isTransparent)
     vim.o.cursorline = not isTransparent
     vim.g.themeCursorLine = not isTransparent
     vim.api.nvim_set_hl(0, "CursorLine", { bg = getHighlightColor(isTransparent) })
+    Colorscheme:apply()
 end
 
 setTheme(isTransparentByDefault)
@@ -60,3 +63,7 @@ vim.keymap.set("n", "<leader>vt", function()
 
     setTheme(not isTransparentNow)
 end, { desc = "Toggle Transparency" })
+
+vim.keymap.set("n", "<leader>vc", function()
+    Colorscheme:next()
+end, { desc = "Next colorscheme" })
