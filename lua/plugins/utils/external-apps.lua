@@ -21,3 +21,7 @@ end, { desc = "Open Merge Conflict Resolver" })
 vim.keymap.set("n", "<leader>mm", function()
     open_fullscreen_app("rmpc")
 end, { desc = "Open Music Player" })
+
+vim.keymap.set("n", "<leader>pp", function()
+    open_fullscreen_app("posting")
+end, { desc = "Open posting" })
