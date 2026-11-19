@@ -21,7 +21,7 @@ arena.setup({
     },
     algorithm = {
         recency_factor = 1,
-        frequency_factor = 0.5,
+        frequency_factor = 0.3,
     },
 })
 
