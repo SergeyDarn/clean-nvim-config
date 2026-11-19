@@ -25,3 +25,7 @@ end, { desc = "Open Music Player" })
 vim.keymap.set("n", "<leader>pp", function()
     open_fullscreen_app("posting")
 end, { desc = "Open posting" })
+
+vim.keymap.set("n", "<leader>db", function()
+    open_fullscreen_app("sqlit")
+end, { desc = "Open sqlit" })
