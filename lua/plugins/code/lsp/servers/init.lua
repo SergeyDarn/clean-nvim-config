@@ -6,6 +6,7 @@ return {
     gopls = require("plugins.code.lsp.servers.gopls"),
     pylsp = require("plugins.code.lsp.servers.pylsp"),
     marksman = {},
+    rust_analyzer = {},
 
     cssls = {},
     emmet_ls = {},
