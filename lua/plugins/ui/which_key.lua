@@ -1,7 +1,11 @@
 require("which-key").setup({
     delay = 300,
+    preset = "modern",
     icons = { mappings = true },
-    -- Document existing key chains
+    keys = {
+        scroll_down = "<c-j>",
+        scroll_up = "<c-k>",
+    },
     spec = {
         { "<leader>c", group = "Code", mode = { "n", "v" } },
         { "<leader>g", group = "Git", mode = { "n", "v" } },
