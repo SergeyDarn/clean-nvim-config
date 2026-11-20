@@ -22,9 +22,11 @@ vim.keymap.set("n", "<leader><Tab>", "<C-^>", { desc = "Go to last buffer" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 --
--- Add vertical split
+-- Manage windows
 --
-vim.keymap.set("n", "<leader>w", "<cmd>botright vsplit<cr>", { desc = "Vertical Split" })
+vim.keymap.set("n", "<leader>ww", "<cmd>botright vsplit<cr>", { desc = "Vertical Split" })
+vim.keymap.set("n", "<leader>wv", "<cmd>botright split<cr>", { desc = "Horizontal Split" })
+vim.keymap.set("n", "<leader>wx", "<C-w>x", { desc = "Switch windows" })
 
 --
 -- Custom movement commands
