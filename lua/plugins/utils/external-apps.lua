@@ -5,6 +5,7 @@ local open_fullscreen_app = function(cmd)
             height = 0,
             keys = {
                 gf = "",
+                term_normal = "",
             },
         },
     })
