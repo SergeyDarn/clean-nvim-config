@@ -100,7 +100,6 @@ function Colorscheme:highlights()
         ["@keyword.debug"] = { fg = colors.keyword },
         ["@keyword.exception"] = { fg = colors.keyword },
         ["@keyword.conditional"] = { fg = colors.keyword },
-        ["@keyword.conditional.ternary"] = { fg = colors.keyword },
         ["@include"] = { fg = colors.keyword },
 
         ["@string"] = { fg = colors.string },
