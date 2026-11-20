@@ -12,6 +12,14 @@ vim.keymap.set("n", "<leader>/", function()
     })
 end, { desc = "Search" })
 
+vim.keymap.set("n", "<leader>so", function()
+    Snacks.picker.grep({
+        buffers = true,
+        regex = false,
+        args = { "-i" },
+    })
+end, { desc = "Search in open buffers" })
+
 vim.keymap.set("n", "/", function()
     Snacks.picker.lines({
         layout = "telescope",
