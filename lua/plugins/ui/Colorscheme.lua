@@ -12,7 +12,9 @@ local Colorscheme = {
         PURPLE = "#CBA6F8",
         PINK = "#f38ba8",
         LIGHT_PINK = "#EBA0AC",
+        FLAMINGO = "#f2cdcd",
         TEAL = "#94e2d5",
+        WHITE = "#CDD6F4",
     },
 }
 
@@ -50,11 +52,13 @@ function Colorscheme:highlightColors()
             parameter = self.colors.LIGHT_PINK,
             const = self.colors.PEACH,
             boolNum = self.colors.PEACH,
-            type = self.colors.YELLOW,
+            module = self.colors.YELLOW,
             property = self.colors.LAVENDER,
 
             -- changed from default
-            module = self.colors.TEAL, -- was yellow
+            type = self.colors.TEAL, -- was yellow
+            css = self.colors.WHITE, -- was blue
+            class = self.colors.FLAMINGO, -- was yellow
         }
     end
 
@@ -63,13 +67,15 @@ function Colorscheme:highlightColors()
             keyword = self.colors.RED,
             string = self.colors.BLUE,
             func = self.colors.PURPLE,
-            module = self.colors.TEAL,
+            css = self.colors.WHITE,
+            class = self.colors.FLAMINGO,
 
-            -- The same for now as default
+            -- The same for now as catppuccin
+            module = self.colors.YELLOW,
             parameter = self.colors.LIGHT_PINK,
             const = self.colors.PEACH,
             boolNum = self.colors.PEACH,
-            type = self.colors.YELLOW,
+            type = self.colors.TEAL,
             property = self.colors.LAVENDER,
         }
     end
@@ -86,6 +92,7 @@ function Colorscheme:highlights()
         ["@keyword.function"] = { fg = colors.keyword },
         ["@keyword.operator"] = { fg = colors.keyword },
         ["@keyword.import"] = { fg = colors.keyword },
+        ["@keyword.export"] = { fg = colors.keyword },
         ["@keyword.type"] = { fg = colors.keyword },
         ["@keyword.modifier"] = { fg = colors.keyword },
         ["@keyword.repeat"] = { fg = colors.keyword },
@@ -93,6 +100,8 @@ function Colorscheme:highlights()
         ["@keyword.debug"] = { fg = colors.keyword },
         ["@keyword.exception"] = { fg = colors.keyword },
         ["@keyword.conditional"] = { fg = colors.keyword },
+        ["@keyword.conditional.ternary"] = { fg = colors.keyword },
+        ["@include"] = { fg = colors.keyword },
 
         ["@string"] = { fg = colors.string },
 
@@ -112,6 +121,9 @@ function Colorscheme:highlights()
 
         ["@type"] = { fg = colors.type },
         ["@type.definition"] = { fg = colors.type },
+        ["@lsp.type.decorator"] = { fg = colors.type },
+
+        ["@lsp.type.class"] = { fg = colors.class },
 
         ["@module"] = { fg = colors.module, italic = true },
         ["@namespace"] = { fg = colors.module, italic = true },
@@ -119,6 +131,11 @@ function Colorscheme:highlights()
 
         ["@property"] = { fg = colors.property },
         ["@variable.member"] = { fg = colors.property },
+        ["@lsp.type.enumMember"] = { fg = colors.property },
+
+        ["@type.css"] = { fg = colors.css },
+        ["@property.css"] = { fg = colors.css },
+        ["@property.scss"] = { fg = colors.css },
     }
 end
 
