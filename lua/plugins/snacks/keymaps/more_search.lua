@@ -105,3 +105,7 @@ end, { desc = "Notes" })
 vim.keymap.set("n", "<leader>sl", function()
     Snacks.picker.highlights()
 end, { desc = "Highlights" })
+
+vim.keymap.set("n", "<leader>sb", function()
+    Snacks.picker.buffers()
+end, { desc = "Buffers" })
