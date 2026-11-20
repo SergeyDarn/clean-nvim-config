@@ -23,6 +23,11 @@ require("snacks").setup({
             end,
         },
         layouts = layouts,
+        formatters = {
+            file = {
+                filename_first = true,
+            },
+        },
     },
 })
 
