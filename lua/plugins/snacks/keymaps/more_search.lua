@@ -74,6 +74,9 @@ vim.keymap.set("n", "<leader>sg", function()
         exclude = {
             "Library",
             "Documents",
+            "Music",
+            "Movies",
+            ".local",
             "go",
             "go.sum",
             ".cache",
