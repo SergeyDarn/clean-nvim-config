@@ -2,7 +2,7 @@ require("mini.icons").setup({})
 -- Used for backwards compatibility with plugins that require `nvim-web-devicons` (e.g. telescope.nvim)
 MiniIcons.mock_nvim_web_devicons()
 
-local mainKey = "z"
+local mainKey = "s"
 
 require("mini.surround").setup({
     mappings = {
