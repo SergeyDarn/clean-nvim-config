@@ -98,3 +98,7 @@ vim.keymap.set("n", "<leader>sn", function()
         dirs = { "~/Synced/Notes" },
     })
 end, { desc = "Notes" })
+
+vim.keymap.set("n", "<leader>sl", function()
+    Snacks.picker.highlights()
+end, { desc = "Highlights" })
