@@ -2,7 +2,7 @@
 -- Main
 --
 vim.keymap.set("n", "<leader><space>", function()
-    Snacks.picker.smart()
+    Snacks.picker.files()
 end, { desc = "Find Files" })
 
 vim.keymap.set("n", "<leader>/", function()
