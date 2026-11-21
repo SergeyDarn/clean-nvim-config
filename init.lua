@@ -8,7 +8,7 @@ local function gh(repo)
 end
 
 --
--- General configs
+-- Setting vim options + general keymaps, autocmds and user cmds
 --
 require("config")
 
@@ -22,14 +22,15 @@ vim.pack.add({
     -- because it works for debugging neovim config)
     --
     gh("chrisgrieser/nvim-chainsaw"),
+
+    --
+    -- Lots of quality of life stuff and utils
+    -- + dozens of useful pickers for searching basically anything (files, folders, git, neovim stuff - anything)
+    -- (Snacks are inited at the begging because some other plugins might be dependant on them)
+    --
+    gh("folke/snacks.nvim"),
 })
 require("plugins.chainsaw")
-
---
--- Snacks
--- (Init snacks first because some other plugins might be dependant on them)
---
-vim.pack.add({ gh("folke/snacks.nvim") })
 require("plugins.snacks")
 
 --
@@ -37,7 +38,7 @@ require("plugins.snacks")
 --
 vim.pack.add({
     --
-    -- Icons
+    -- Icons that many other plugins use
     --
     gh("nvim-mini/mini.icons"),
 
@@ -45,7 +46,7 @@ vim.pack.add({
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     --
     gh("nvim-mini/mini.surround"),
-    -- "q" for quote, "b" for brackets, "t" for tag
+    -- Add textobjects: "q" for quote, "b" for brackets, "t" for tag
     gh("nvim-mini/mini.ai"),
 
     --
@@ -54,12 +55,13 @@ vim.pack.add({
     gh("NMAC427/guess-indent.nvim"),
 
     --
-    -- Set correct current working directory
+    -- Set correct current working directory automatically
     -- when opening vim and when switching between projects
+    --
     gh("wsdjeg/rooter.nvim"),
 
     --
-    -- Change relative line numbers to only include 1-5 numbers, for vim motions comfort
+    -- Change relative line numbers to only include numbers 1-5 for comfort
     --
     gh("mluders/comfy-line-numbers.nvim"),
 
@@ -108,7 +110,7 @@ vim.pack.add({
     --
     -- Git diffviewer
     --- using it for interactively splitting commits with jj split
-    --- to resolve merge conflicts I'm using ec
+    --- (not using it for merge conflicts - because I like ec more for that)
     ---
     gh("dlyongemallo/diffview-plus.nvim"),
 })
@@ -119,7 +121,7 @@ require("plugins.utils")
 ---
 vim.pack.add({
     --
-    -- Theme
+    -- Base for the colorscheme
     --
     { src = gh("catppuccin/nvim"), name = "catppuccin" },
 
@@ -231,9 +233,25 @@ require("plugins.code")
 -- Navigation
 --
 vim.pack.add({
+    --
+    -- Recent files with frecency algorithm
+    --
     gh("dzfrias/arena.nvim"),
+
+    --
+    -- Quickly go to any part of the screen
+    --
     gh("folke/flash.nvim"),
+
+    --
+    -- Pin files to quickly navigate between them
+    -- + better marks with previews for better navigation inside long files
+    --
     gh("SergeyDarn/arrow.nvim"),
+
+    --
+    -- File manager
+    --
     gh("mikavilpas/yazi.nvim"),
 })
 
@@ -249,7 +267,7 @@ vim.pack.add({
     gh("OXY2DEV/markview.nvim"),
 
     --
-    -- Add better styling to vim docs
+    -- Better styling to vim docs
     --
     gh("OXY2DEV/helpview.nvim"),
 
