@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>sh", function()
 end, { desc = "Help" })
 
 vim.keymap.set("n", "<leader>se", function()
-    Snacks.picker.diagnostics()
+    Snacks.picker.diagnostics({ layout = "ivy_split" })
 end, { desc = "Code Errors" })
 
 vim.keymap.set("n", "<leader>sp", function()
@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>s.", function()
 end, { desc = "Scratches" })
 
 vim.keymap.set("n", "<leader>st", function()
-    Snacks.picker.todo_comments()
+    Snacks.picker.todo_comments({ layout = "ivy_split" })
 end, { desc = "Todos" })
 
 vim.keymap.set("n", "<leader>z", function()
