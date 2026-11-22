@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>sp", function()
 end, { desc = "Projects" })
 
 vim.keymap.set("n", "<leader>si", function()
-    Snacks.picker.icons()
+    Snacks.picker.icons({ layout = "select" })
 end, { desc = "Icons" })
 
 vim.keymap.set("n", "<leader>s.", function()
