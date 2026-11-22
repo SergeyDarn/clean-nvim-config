@@ -130,7 +130,6 @@ vim.keymap.set("n", "<leader>sd", function()
 
             Snacks.picker.grep({
                 regex = false,
-                args = { "-i" },
                 cwd = item.file,
             })
         end,

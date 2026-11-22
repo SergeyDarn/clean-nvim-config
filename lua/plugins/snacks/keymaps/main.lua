@@ -8,7 +8,6 @@ end, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>/", function()
     Snacks.picker.grep({
         regex = false,
-        args = { "-i" },
     })
 end, { desc = "Search" })
 
@@ -16,7 +15,6 @@ vim.keymap.set("n", "<leader>so", function()
     Snacks.picker.grep({
         buffers = true,
         regex = false,
-        args = { "-i" },
     })
 end, { desc = "Search in open buffers" })
 
