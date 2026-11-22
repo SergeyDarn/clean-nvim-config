@@ -9,6 +9,7 @@ vim.keymap.set("n", "<leader>/", function()
     Snacks.picker.grep({
         regex = false,
         layout = "ivy_split",
+        args = { "--trim" },
     })
 end, { desc = "Search" })
 
@@ -17,6 +18,7 @@ vim.keymap.set("n", "<leader>so", function()
         buffers = true,
         regex = false,
         layout = "ivy_split",
+        args = { "--trim" },
     })
 end, { desc = "Search in open buffers" })
 
