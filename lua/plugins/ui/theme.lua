@@ -1,7 +1,7 @@
 local catppuccin = require("catppuccin")
 local Colorscheme = require("plugins.ui.Colorscheme")
 
-local COLOR_TEXT_ACCENT = Colorscheme.colors.PEACH
+local COLOR_ACCENT = Colorscheme.colors.PEACH
 local COLOR_BORDER = "#454759"
 local COLOR_TRANSPARENT_HIGHLIGHT = COLOR_BORDER
 local COLOR_NORMAL_HIGHLIGHT = "#2a2b3c"
@@ -29,12 +29,15 @@ catppuccin.setup({
 
         return {
             FloatBorder = { fg = COLOR_BORDER, bg = "none" },
-            SnacksPickerMatch = { fg = COLOR_TEXT_ACCENT, bg = "none" },
+            SnacksPickerMatch = { fg = COLOR_ACCENT, bg = "none" },
             LineNr = { fg = utils.darken(colors.lavender, 0.7) },
 
             BlinkCmpMenuBorder = { fg = COLOR_BORDER },
             BlinkCmpLabel = { fg = colors.text },
-            BlinkCmpLabelMatch = { fg = COLOR_TEXT_ACCENT },
+            BlinkCmpLabelMatch = { fg = COLOR_ACCENT },
+
+            NoiceCmdlinePopupBorder = { fg = COLOR_ACCENT },
+            NoiceCmdlineIcon = { fg = COLOR_ACCENT },
         }
     end,
 })
