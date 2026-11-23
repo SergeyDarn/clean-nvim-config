@@ -3,7 +3,6 @@ local Colorscheme = require("plugins.ui.Colorscheme")
 local bubbles_theme = {
     normal = {
         a = { fg = Colorscheme.colors.BLACK, bg = Colorscheme.colors.BLUE, gui = "bold" },
-        b = { fg = Colorscheme.colors.WHITE, bg = Colorscheme.colors.GREY },
         c = { fg = Colorscheme.colors.WHITE },
     },
 
@@ -13,7 +12,6 @@ local bubbles_theme = {
 
     inactive = {
         a = { fg = Colorscheme.colors.WHITE, bg = Colorscheme.colors.BLACK },
-        b = { fg = Colorscheme.colors.WHITE, bg = Colorscheme.colors.BLACK },
         c = { fg = Colorscheme.colors.WHITE },
     },
 }
@@ -21,7 +19,6 @@ local bubbles_theme = {
 require("lualine").setup({
     options = {
         theme = bubbles_theme,
-        section_separators = { left = "", right = "" },
         disabled_filetypes = {
             statusline = { "grug-far" },
         },
@@ -35,7 +32,24 @@ require("lualine").setup({
                 right_padding = 2,
             },
         },
-        lualine_b = { "filename" },
+        lualine_b = {
+            {
+                function()
+                    local fg = Colorscheme.colors.WHITE
+                    local bg = Colorscheme.colors.GREY
+
+                    if vim.bo.modified then
+                        fg = Colorscheme.colors.YELLOW
+                    end
+
+                    vim.cmd("hi! lualine_filename_status guifg=" .. fg .. " guibg=" .. bg)
+
+                    return "%t"
+                end,
+                color = "lualine_filename_status",
+                separator = { right = "" },
+            },
+        },
         lualine_c = { "diagnostics", "diff" },
         lualine_x = { "location" },
         lualine_y = {
