@@ -45,7 +45,7 @@ vim.keymap.set("n", "<leader>sl", function()
 end, { desc = "Logs" })
 
 vim.keymap.set("n", "<leader>sk", function()
-    Snacks.picker.keymaps()
+    Snacks.picker.keymaps({ layout = "ivy_split" })
 end, { desc = "Keymaps" })
 
 vim.keymap.set("n", "<leader>ms", function()
