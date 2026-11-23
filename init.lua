@@ -226,6 +226,14 @@ vim.pack.add({
     -- Quickly toggle a block of code between a single line or multiple lines
     --
     gh("Wansmer/treesj"),
+
+    --
+    -- Debugging
+    --
+    gh("mfussenegger/nvim-dap"),
+    gh("theHamsta/nvim-dap-virtual-text"),
+    { src = gh("igorlfs/nvim-dap-view"), version = vim.version.range("1.*") },
+    gh("leoluz/nvim-dap-go"),
 })
 require("plugins.code")
 

@@ -9,6 +9,7 @@ require("nvim-ts-autotag").setup({})
 
 require("plugins.code.grug_far")
 require("plugins.code.trouble")
+require("plugins.code.dap")
 
 local treesj = require("treesj")
 treesj.setup({
