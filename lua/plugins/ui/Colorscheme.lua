@@ -15,6 +15,8 @@ local Colorscheme = {
         FLAMINGO = "#f2cdcd",
         TEAL = "#94e2d5",
         WHITE = "#CDD6F4",
+        BLACK = "#080808",
+        GREY = "#303030",
     },
 }
 
