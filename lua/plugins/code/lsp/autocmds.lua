@@ -71,10 +71,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
                     --  + there are multiple of them - 1 per lua project
                     --  + sometimes they duplicate too)
                     --
-                    -- During LspDetach, the closing buffer is still in the list,
-                    -- so a count of 1 (or 0) means no other buffers are using it.
-                    if #client.attached_buffers <= 1 then
-                        client:stop()
+                    local other_buffers = vim.tbl_filter(function(buf)
+                        return (buf ~= event2.buf) and vim.api.nvim_buf_is_valid(buf)
+                    end, client.attached_buffers)
+
+                    if #other_buffers == 0 then
+                        --
+                        -- Defer slightly to avoid race conditions during buffer wipes or reloads
+                        -- + a second double check to make sure that there's really no buffers that need the lsp
+                        --
+                        vim.defer_fn(function()
+                            if #client.attached_buffers == 0 then
+                                client:stop()
+                            end
+                        end, 500)
                     end
                 end,
             })
