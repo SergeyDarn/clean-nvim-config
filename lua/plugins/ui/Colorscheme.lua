@@ -1,7 +1,8 @@
 local Colorscheme = {
     THEME_CATPPUCCIN = "catppuccin",
-    THEME_CUSTOM = "custom",
+    THEME_GITHUB = "github",
     currentIndex = 1,
+    highlights = {},
     colors = {
         PEACH = "#fab387",
         RED = "#F96870",
@@ -21,10 +22,13 @@ local Colorscheme = {
 }
 
 Colorscheme.themes = {
-    Colorscheme.THEME_CUSTOM,
+    Colorscheme.THEME_GITHUB,
     Colorscheme.THEME_CATPPUCCIN,
 }
 
+--
+-- Apply next colorscheme
+--
 function Colorscheme:next()
     if self.currentIndex == #self.themes then
         self.currentIndex = 1
@@ -35,109 +39,250 @@ function Colorscheme:next()
     self:apply()
 end
 
-function Colorscheme:current()
+--
+-- Return curent colorscheme
+--
+function Colorscheme:getCurrent()
     return self.themes[self.currentIndex]
 end
 
+--
+-- Apply curent colorscheme
+--
 function Colorscheme:apply()
-    for name, value in pairs(self:highlights()) do
+    self:buildHighlights()
+    self:applyHighlights()
+end
+
+---
+--- Apply highlights
+---
+function Colorscheme:applyHighlights()
+    for name, value in pairs(self.highlights) do
         vim.api.nvim_set_hl(0, name, value)
     end
 end
 
-function Colorscheme:highlightColors()
-    if self:current() == self.THEME_CATPPUCCIN then
-        return {
-            keyword = self.colors.PURPLE,
-            string = self.colors.GREEN,
-            func = self.colors.BLUE,
-            parameter = self.colors.LIGHT_PINK,
-            const = self.colors.PEACH,
-            boolNum = self.colors.PEACH,
-            module = self.colors.YELLOW,
-            property = self.colors.LAVENDER,
+--
+-- Build highlights for the current theme
+--
+function Colorscheme:buildHighlights()
+    --
+    -- NOTE: Some colors are the same as in the default Catppuccin theme
+    -- It's for completeness sake
+    -- I want to see all the theme colors I care about in the same place
+    -- (+ Potentially in the future I would be able to stop using 3rd party theming plugins altogether)
+    --
+    self:resetHighlights()
 
-            -- changed from default
-            type = self.colors.TEAL, -- was yellow
-            css = self.colors.WHITE, -- was blue
-            class = self.colors.FLAMINGO, -- was yellow
-        }
+    if self:getCurrent() == self.THEME_CATPPUCCIN then
+        -- stylua: ignore
+        self
+            :addCommonHl()
+            :addKeywordHl(self.colors.PURPLE)
+            :addStringHl(self.colors.GREEN)
+            :addFunctionHl(self.colors.BLUE)
+
+        return
     end
 
-    if self:current() == self.THEME_CUSTOM then
-        return {
-            keyword = self.colors.RED,
-            string = self.colors.BLUE,
-            func = self.colors.PURPLE,
-            css = self.colors.WHITE,
-            class = self.colors.FLAMINGO,
+    if self:getCurrent() == self.THEME_GITHUB then
+        -- stylua: ignore
+        self
+            :addCommonHl()
+            :addKeywordHl(self.colors.RED)
+            :addStringHl(self.colors.BLUE)
+            :addFunctionHl(self.colors.PURPLE)
 
-            -- The same for now as catppuccin
-            module = self.colors.YELLOW,
-            parameter = self.colors.LIGHT_PINK,
-            const = self.colors.PEACH,
-            boolNum = self.colors.PEACH,
-            type = self.colors.TEAL,
-            property = self.colors.LAVENDER,
-        }
+        return
     end
 
     error("Trying to apply colorscheme that doesn't exist")
 end
 
-function Colorscheme:highlights()
-    local colors = self:highlightColors()
+--
+-- Add highlights that are common between themes
+--
+function Colorscheme:addCommonHl()
+    -- stylua: ignore
+    return self
+        :addParamHl(self.colors.LIGHT_PINK)
+        :addConstHl(self.colors.PEACH)
+        :addSimpleTypeHl(self.colors.PEACH)
+        :addTypeHl(self.colors.TEAL)
+        :addClassHl(self.colors.FLAMINGO)
+        :addModuleHl(self.colors.YELLOW)
+        :addPropertyHl(self.colors.LAVENDER)
+        :addCssHl(self.colors.WHITE)
+end
 
-    return {
-        ["@keyword"] = { fg = colors.keyword },
-        ["@keyword.coroutine"] = { fg = colors.keyword },
-        ["@keyword.function"] = { fg = colors.keyword },
-        ["@keyword.operator"] = { fg = colors.keyword },
-        ["@keyword.import"] = { fg = colors.keyword },
-        ["@keyword.export"] = { fg = colors.keyword },
-        ["@keyword.type"] = { fg = colors.keyword },
-        ["@keyword.modifier"] = { fg = colors.keyword },
-        ["@keyword.repeat"] = { fg = colors.keyword },
-        ["@keyword.return"] = { fg = colors.keyword },
-        ["@keyword.debug"] = { fg = colors.keyword },
-        ["@keyword.exception"] = { fg = colors.keyword },
-        ["@keyword.conditional"] = { fg = colors.keyword },
-        ["@include"] = { fg = colors.keyword },
+function Colorscheme:resetHighlights()
+    self.highlights = {}
+end
 
-        ["@string"] = { fg = colors.string },
+---
+--- @param highlights string[] | vim.api.keyset.highlight[]
+---
+function Colorscheme:addHighlights(highlights)
+    self.highlights = vim.tbl_extend("keep", self.highlights, highlights)
+    return self
+end
 
-        ["@function"] = { fg = colors.func },
-        ["@function.call"] = { fg = colors.func },
-        ["@function.method"] = { fg = colors.func },
-        ["@function.method.call"] = { fg = colors.func },
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:buildHighlight(highlight)
+    if type(highlight) == "string" then
+        return { fg = highlight }
+    end
 
-        ["@variable.parameter"] = { fg = colors.parameter },
+    return highlight
+end
 
-        ["@constant"] = { fg = colors.const },
-        ["@constant.builtin"] = { fg = colors.const },
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addKeywordHl(highlight)
+    highlight = self:buildHighlight(highlight)
 
-        ["@boolean"] = { fg = colors.boolNum },
-        ["@number"] = { fg = colors.boolNum },
-        ["@number.float"] = { fg = colors.boolNum },
+    return self:addHighlights({
+        ["@keyword"] = highlight,
+        ["@keyword.coroutine"] = highlight,
+        ["@keyword.function"] = highlight,
+        ["@keyword.operator"] = highlight,
+        ["@keyword.import"] = highlight,
+        ["@keyword.export"] = highlight,
+        ["@keyword.type"] = highlight,
+        ["@keyword.modifier"] = highlight,
+        ["@keyword.repeat"] = highlight,
+        ["@keyword.return"] = highlight,
+        ["@keyword.debug"] = highlight,
+        ["@keyword.exception"] = highlight,
+        ["@keyword.conditional"] = highlight,
+        ["@include"] = highlight,
+    })
+end
 
-        ["@type"] = { fg = colors.type },
-        ["@type.definition"] = { fg = colors.type },
-        ["@lsp.type.decorator"] = { fg = colors.type },
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addStringHl(highlight)
+    highlight = self:buildHighlight(highlight)
 
-        ["@lsp.type.class"] = { fg = colors.class },
+    return self:addHighlights({
+        ["@string"] = highlight,
+    })
+end
 
-        ["@module"] = { fg = colors.module, italic = true },
-        ["@namespace"] = { fg = colors.module, italic = true },
-        ["@function.builtin"] = { fg = colors.module },
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addFunctionHl(highlight)
+    highlight = self:buildHighlight(highlight)
 
-        ["@property"] = { fg = colors.property },
-        ["@variable.member"] = { fg = colors.property },
-        ["@lsp.type.enumMember"] = { fg = colors.property },
+    return self:addHighlights({
+        ["@function"] = highlight,
+        ["@function.call"] = highlight,
+        ["@function.method"] = highlight,
+        ["@function.method.call"] = highlight,
+    })
+end
 
-        ["@type.css"] = { fg = colors.css },
-        ["@property.css"] = { fg = colors.css },
-        ["@property.scss"] = { fg = colors.css },
-    }
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addParamHl(highlight)
+    highlight = self:buildHighlight(highlight)
+
+    return self:addHighlights({
+        ["@variable.parameter"] = highlight,
+    })
+end
+
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addConstHl(highlight)
+    highlight = self:buildHighlight(highlight)
+
+    return self:addHighlights({
+        ["@constant"] = highlight,
+        ["@constant.builtin"] = highlight,
+    })
+end
+
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addSimpleTypeHl(highlight)
+    highlight = self:buildHighlight(highlight)
+
+    return self:addHighlights({
+        ["@boolean"] = highlight,
+        ["@number"] = highlight,
+        ["@number.float"] = highlight,
+    })
+end
+
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addTypeHl(highlight)
+    highlight = self:buildHighlight(highlight)
+
+    return self:addHighlights({
+        ["@type"] = highlight,
+        ["@type.definition"] = highlight,
+        ["@lsp.type.decorator"] = highlight,
+    })
+end
+
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addClassHl(highlight)
+    highlight = self:buildHighlight(highlight)
+
+    return self:addHighlights({
+        ["@lsp.type.class"] = highlight,
+    })
+end
+
+---
+--- @param color string
+---
+function Colorscheme:addModuleHl(color)
+    return self:addHighlights({
+        ["@module"] = { fg = color, italic = true },
+        ["@namespace"] = { fg = color, italic = true },
+        ["@function.builtin"] = { fg = color },
+    })
+end
+
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addPropertyHl(highlight)
+    highlight = self:buildHighlight(highlight)
+
+    return self:addHighlights({
+        ["@property"] = highlight,
+        ["@variable.member"] = highlight,
+        ["@lsp.type.enumMember"] = highlight,
+    })
+end
+
+---
+--- @param highlight string | vim.api.keyset.highlight
+---
+function Colorscheme:addCssHl(highlight)
+    highlight = self:buildHighlight(highlight)
+
+    return self:addHighlights({
+        ["@type.css"] = highlight,
+        ["@property.css"] = highlight,
+        ["@property.scss"] = highlight,
+    })
 end
 
 return Colorscheme
