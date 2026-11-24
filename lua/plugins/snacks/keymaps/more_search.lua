@@ -1,7 +1,7 @@
 --
 -- More Search
 --
-vim.keymap.set("n", "<leader>sh", function()
+vim.keymap.set("n", "<leader>shh", function()
     Snacks.picker.help({
         layout = "telescope",
     })
@@ -143,7 +143,7 @@ vim.keymap.set("n", "<leader>sn", function()
     })
 end, { desc = "Notes" })
 
-vim.keymap.set("n", "<leader>sl", function()
+vim.keymap.set("n", "<leader>shl", function()
     Snacks.picker.highlights()
 end, { desc = "Highlights" })
 
