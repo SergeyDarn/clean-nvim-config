@@ -73,7 +73,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
                     --
                     local other_buffers = vim.tbl_filter(function(buf)
                         return (buf ~= event2.buf) and vim.api.nvim_buf_is_valid(buf)
-                    end, client.attached_buffers)
+                    end, vim.tbl_keys(client.attached_buffers))
 
                     if #other_buffers == 0 then
                         --
