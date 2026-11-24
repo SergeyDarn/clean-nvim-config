@@ -4,6 +4,7 @@ local bubbles_theme = {
     normal = {
         a = { fg = Colorscheme.colors.BLACK, bg = Colorscheme.colors.BLUE, gui = "bold" },
         c = { fg = Colorscheme.colors.WHITE },
+        y = { bg = Colorscheme.colors.GREY },
     },
 
     insert = { a = { fg = Colorscheme.colors.BLACK, bg = Colorscheme.colors.GREEN, gui = "bold" } },
@@ -13,6 +14,7 @@ local bubbles_theme = {
     inactive = {
         a = { fg = Colorscheme.colors.WHITE, bg = Colorscheme.colors.BLACK },
         c = { fg = Colorscheme.colors.WHITE },
+        y = { bg = Colorscheme.colors.GREY },
     },
 }
 
