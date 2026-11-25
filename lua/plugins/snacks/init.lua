@@ -18,6 +18,14 @@ require("snacks").setup({
         },
     },
     picker = {
+        win = {
+            input = {
+                keys = {
+                    ["<C-n>"] = { "preview_scroll_down", mode = { "i", "n" } },
+                    ["<C-p>"] = { "preview_scroll_up", mode = { "i", "n" } },
+                },
+            },
+        },
         layout = {
             preset = function()
                 return "telescope"
@@ -57,6 +65,9 @@ require("snacks").setup({
                 --
                 filename_first = true,
             },
+        },
+        matcher = {
+            frecency = true,
         },
     },
 })
