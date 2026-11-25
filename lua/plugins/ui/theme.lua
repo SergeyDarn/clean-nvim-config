@@ -1,19 +1,14 @@
 local catppuccin = require("catppuccin")
-local Colorscheme = require("plugins.ui.Colorscheme")
-
-local COLOR_ACCENT = Colorscheme.colors.PEACH
-local COLOR_BORDER = "#454759"
-local COLOR_TRANSPARENT_HIGHLIGHT = COLOR_BORDER
-local COLOR_NORMAL_HIGHLIGHT = "#2a2b3c"
+local Colorscheme = require("Colorscheme")
 
 local isTransparentByDefault = true
 
 local function getHighlightColor(isTransprentTheme)
     if isTransprentTheme then
-        return COLOR_TRANSPARENT_HIGHLIGHT
+        return Colorscheme.colors.STEEL_GREY
     end
 
-    return COLOR_NORMAL_HIGHLIGHT
+    return Colorscheme.colors.GUNMETAL_GREY
 end
 
 catppuccin.setup({
@@ -28,16 +23,13 @@ catppuccin.setup({
         local utils = require("catppuccin.utils.colors")
 
         return {
-            FloatBorder = { fg = COLOR_BORDER, bg = "none" },
-            SnacksPickerMatch = { fg = COLOR_ACCENT, bg = "none" },
+            FloatBorder = { fg = Colorscheme.colors.BORDER, bg = "none" },
             LineNr = { fg = utils.darken(colors.lavender, 0.7) },
 
-            BlinkCmpMenuBorder = { fg = COLOR_BORDER },
-            BlinkCmpLabel = { fg = colors.text },
-            BlinkCmpLabelMatch = { fg = COLOR_ACCENT },
+            IncSearch = { bg = Colorscheme.colors.ACCENT, fg = Colorscheme.colors.BLACK },
 
-            NoiceCmdlinePopupBorder = { fg = COLOR_ACCENT },
-            NoiceCmdlineIcon = { fg = COLOR_ACCENT },
+            SnacksPickerMatch = { bg = Colorscheme.colors.ACCENT, fg = Colorscheme.colors.BLACK },
+            SnacksPickerSearch = { bg = Colorscheme.colors.ACCENT, fg = Colorscheme.colors.BLACK },
         }
     end,
 })
@@ -54,7 +46,7 @@ local function setTheme(isTransparent)
     vim.o.cursorline = not isTransparent
     vim.g.themeCursorLine = not isTransparent
     vim.api.nvim_set_hl(0, "CursorLine", { bg = getHighlightColor(isTransparent) })
-    Colorscheme:apply()
+    Colorscheme:compile()
 end
 
 setTheme(isTransparentByDefault)
@@ -68,5 +60,5 @@ vim.keymap.set("n", "<leader>vt", function()
 end, { desc = "Toggle Transparency" })
 
 vim.keymap.set("n", "<leader>vc", function()
-    Colorscheme:next()
+    Colorscheme:nextTheme()
 end, { desc = "Next colorscheme" })

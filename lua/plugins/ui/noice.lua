@@ -1,3 +1,5 @@
+local Colorscheme = require("Colorscheme")
+
 require("noice").setup({
     presets = {
         command_palette = true,
@@ -32,4 +34,9 @@ require("noice").setup({
     health = {
         checker = false, -- Disable if you don't want health checks to run
     },
+})
+
+Colorscheme:applyHighlights({
+    NoiceCmdlinePopupBorder = { fg = Colorscheme.colors.ACCENT },
+    NoiceCmdlineIcon = { fg = Colorscheme.colors.ACCENT },
 })

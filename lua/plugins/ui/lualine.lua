@@ -1,4 +1,4 @@
-local Colorscheme = require("plugins.ui.Colorscheme")
+local Colorscheme = require("Colorscheme")
 
 local bubbles_theme = {
     normal = {

@@ -1,3 +1,5 @@
+local Colorscheme = require("Colorscheme")
+
 require("blink.cmp").setup({
     keymap = {
         -- See `:help blink-cmp-config-keymap` for defining your own keymap
@@ -64,4 +66,10 @@ require("blink.cmp").setup({
             border = vim.g.border_type,
         },
     },
+})
+
+Colorscheme:applyHighlights({
+    BlinkCmpMenuBorder = { fg = Colorscheme.colors.BORDER },
+    BlinkCmpLabel = { fg = Colorscheme.colors.WHITE },
+    BlinkCmpLabelMatch = { fg = Colorscheme.colors.ACCENT },
 })

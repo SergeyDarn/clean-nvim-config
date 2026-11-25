@@ -1,4 +1,5 @@
 local layouts = require("plugins.snacks.layouts")
+local Colorscheme = require("Colorscheme")
 
 require("snacks").setup({
     notifier = { enabled = true },
