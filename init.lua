@@ -261,6 +261,11 @@ vim.pack.add({
     -- File manager
     --
     gh("mikavilpas/yazi.nvim"),
+
+    --
+    -- Better & faster search
+    --
+    gh("dmtrKovalenko/fff"),
 })
 
 require("plugins.navigation")
