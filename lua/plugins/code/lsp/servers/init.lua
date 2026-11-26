@@ -6,7 +6,17 @@ return {
     gopls = require("plugins.code.lsp.servers.gopls"),
     pylsp = require("plugins.code.lsp.servers.pylsp"),
     marksman = {},
-    rust_analyzer = {},
+    rust_analyzer = {
+        settings = {
+            ["rust-analyzer"] = {
+                completion = {
+                    callable = {
+                        snippets = "add_parentheses",
+                    },
+                },
+            },
+        },
+    },
 
     cssls = {},
     emmet_ls = {},

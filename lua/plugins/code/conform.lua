@@ -18,6 +18,7 @@ require("conform").setup({
             json = true,
             toml = true,
             python = true,
+            rust = true,
         }
 
         -- Skip any window currently in Neovim diff mode (including working-tree files in Diffview)
@@ -43,12 +44,7 @@ require("conform").setup({
         json = { "prettierd", "prettier", "jq", stop_after_first = true },
         toml = { "taplo" },
         python = { "isort", "black" },
-        --
-        -- rust = { 'rustfmt' },
-        -- Conform can also run multiple formatters sequentially
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        rust = { "rustfmt" },
     },
     formatters = {
         prettierd = prettier_args,
