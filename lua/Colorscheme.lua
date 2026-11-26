@@ -168,6 +168,8 @@ function Colorscheme:_addKeywordHl(highlight)
         ["@keyword.exception"] = highlight,
         ["@keyword.conditional"] = highlight,
         ["@include"] = highlight,
+
+        ["BlinkCmpKindKeyword"] = highlight,
     })
 end
 
@@ -193,6 +195,9 @@ function Colorscheme:_addFunctionHl(highlight)
         ["@function.call"] = highlight,
         ["@function.method"] = highlight,
         ["@function.method.call"] = highlight,
+
+        BlinkCmpKindFunction = highlight,
+        BlinkCmpKindMethod = highlight,
     })
 end
 
@@ -216,6 +221,8 @@ function Colorscheme:_addConstHl(highlight)
     return self:_addHighlights({
         ["@constant"] = highlight,
         ["@constant.builtin"] = highlight,
+
+        BlinkCmpKindConstant = highlight,
     })
 end
 
@@ -229,6 +236,8 @@ function Colorscheme:_addSimpleTypeHl(highlight)
         ["@boolean"] = highlight,
         ["@number"] = highlight,
         ["@number.float"] = highlight,
+
+        BlinkCmpKindValue = highlight,
     })
 end
 
@@ -241,7 +250,14 @@ function Colorscheme:_addTypeHl(highlight)
     return self:_addHighlights({
         ["@type"] = highlight,
         ["@type.definition"] = highlight,
+        ["@type.builtin"] = highlight,
         ["@lsp.type.decorator"] = highlight,
+        ["@lsp.type.enumMember"] = highlight,
+
+        BlinkCmpKindInterface = highlight,
+        BlinkCmpKindStruct = highlight,
+        BlinkCmpKindEnum = highlight,
+        BlinkCmpKindEnumMember = highlight,
     })
 end
 
@@ -253,6 +269,8 @@ function Colorscheme:_addClassHl(highlight)
 
     return self:_addHighlights({
         ["@lsp.type.class"] = highlight,
+
+        BlinkCmpKindClass = highlight,
     })
 end
 
@@ -264,6 +282,10 @@ function Colorscheme:_addModuleHl(color)
         ["@module"] = { fg = color, italic = true },
         ["@namespace"] = { fg = color, italic = true },
         ["@function.builtin"] = { fg = color },
+        ["@constant.macro"] = { fg = color },
+
+        BlinkCmpKindModule = { fg = color },
+        BlinkCmpKindModules = { fg = color },
     })
 end
 
@@ -276,7 +298,10 @@ function Colorscheme:_addPropertyHl(highlight)
     return self:_addHighlights({
         ["@property"] = highlight,
         ["@variable.member"] = highlight,
-        ["@lsp.type.enumMember"] = highlight,
+
+        BlinkCmpKindVariable = highlight,
+        BlinkCmpKindField = highlight,
+        BlinkCmpKindProperty = highlight,
     })
 end
 
