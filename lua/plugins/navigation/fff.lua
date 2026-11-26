@@ -7,7 +7,8 @@ require("fff").setup({
     layout = {
         width = 1,
         height = 1,
-        preview_size = 0.65,
+        preview_size = 0.6,
+        flex = false,
     },
     prompt = "🍷 ",
     keymaps = {
@@ -18,7 +19,16 @@ require("fff").setup({
     git = {
         status_text_color = true,
     },
-    debug = { enabled = true, show_scores = true },
+    debug = {
+        enabled = true,
+        show_scores = true,
+        show_file_info = {
+            file_info = true,
+            score_breakdown = true,
+            timings = false,
+            full_path = false, -- relative path at the bottom (wraps if too long)
+        },
+    },
 })
 
 Colorscheme:applyHighlights({
