@@ -4,6 +4,7 @@
 --
 require("plugins.code.lsp.mason")
 require("plugins.code.lsp.autocmds")
+require("plugins.code.lsp.workplace_diagnostics")
 
 --
 -- Progress bar

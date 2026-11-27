@@ -190,6 +190,12 @@ vim.pack.add({
     gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
 
     --
+    -- Show diagnostics (errors, warnings) for all files in the project,
+    -- instead of just the opened ones
+    --
+    gh("artemave/workspace-diagnostics.nvim"),
+
+    --
     -- Code autocomplete
     --
     {
