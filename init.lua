@@ -198,6 +198,11 @@ vim.pack.add({
     },
 
     --
+    -- Snippets
+    --
+    { src = gh("L3MON4D3/LuaSnip"), version = vim.version.range("2.*") },
+
+    --
     -- Code formatting
     --
     gh("stevearc/conform.nvim"),

@@ -1,6 +1,7 @@
 require("plugins.code.lsp")
 require("plugins.code.treesitter")
 
+require("plugins.code.luasnip")
 require("plugins.code.blink")
 require("plugins.code.conform")
 
