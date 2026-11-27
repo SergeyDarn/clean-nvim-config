@@ -3,10 +3,13 @@ local Colorscheme = {
     _highlights = {},
 
     THEME_CATPPUCCIN = "catppuccin",
+    CATPPUCCIN_PASTEL = "catppuccin_red",
     THEME_GITHUB = "github",
     colors = {
+        PASTEL_ORANGE = "#E0B991",
         PEACH = "#fab387",
         RED = "#F96870",
+        PASTEL_GREEN = "#9BD0A1",
         GREEN = "#A6E3A1",
         YELLOW = "#F9E2AF",
         BLUE = "#89B4FA",
@@ -30,8 +33,9 @@ Colorscheme.colors = vim.tbl_extend("keep", Colorscheme.colors, {
 })
 
 Colorscheme.themes = {
-    Colorscheme.THEME_GITHUB,
+    Colorscheme.CATPPUCCIN_PASTEL,
     Colorscheme.THEME_CATPPUCCIN,
+    Colorscheme.THEME_GITHUB,
 }
 
 --
@@ -91,6 +95,12 @@ function Colorscheme:_build()
             :_addStringHl(self.colors.GREEN)
             :_addFunctionHl(self.colors.BLUE)
 
+            -- Same as Github
+            :_addConstHl(self.colors.PEACH)
+            :_addSimpleTypeHl(self.colors.PEACH)
+            :_addModuleHl(self.colors.PEACH)
+            :_addParamHl(self.colors.LIGHT_PINK)
+
         return
     end
 
@@ -101,6 +111,28 @@ function Colorscheme:_build()
             :_addKeywordHl(self.colors.RED)
             :_addStringHl(self.colors.BLUE)
             :_addFunctionHl(self.colors.PURPLE)
+
+            -- Same as Catppuccin
+            :_addConstHl(self.colors.PEACH)
+            :_addSimpleTypeHl(self.colors.PEACH)
+            :_addModuleHl(self.colors.PEACH)
+            :_addParamHl(self.colors.LIGHT_PINK)
+
+        return
+    end
+
+    if self:getTheme() == self.CATPPUCCIN_PASTEL then
+        -- stylua: ignore
+        self
+            :_addCommonHl()
+            :_addKeywordHl(self.colors.LIGHT_PINK)
+            :_addStringHl(self.colors.PASTEL_GREEN)
+            :_addFunctionHl(self.colors.BLUE)
+
+            :_addModuleHl(self.colors.PASTEL_ORANGE)
+            :_addConstHl(self.colors.PASTEL_ORANGE)
+            :_addSimpleTypeHl(self.colors.PASTEL_ORANGE)
+            :_addParamHl(self.colors.FLAMINGO)
 
         return
     end
@@ -114,12 +146,8 @@ end
 function Colorscheme:_addCommonHl()
     -- stylua: ignore
     return self
-        :_addParamHl(self.colors.LIGHT_PINK)
-        :_addConstHl(self.colors.PEACH)
-        :_addSimpleTypeHl(self.colors.PEACH)
         :_addTypeHl(self.colors.YELLOW)
         :_addClassHl(self.colors.FLAMINGO)
-        :_addModuleHl(self.colors.PEACH)
         :_addPropertyHl(self.colors.LAVENDER)
         :_addCssHl(self.colors.WHITE)
 end
